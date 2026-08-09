@@ -7,8 +7,9 @@
  * the client to confirm are marked `TODO(client)`.
  */
 
-// TODO(client): confirm the canonical production domain (www vs non-www).
-export const SITE_URL = 'https://www.hefcap.com';
+// Canonical production domain — apex (non-www), matching the Netlify primary
+// domain. `www.hefcap.com` redirects here.
+export const SITE_URL = 'https://hefcap.com';
 
 export const LOCALES = ['en', 'sr'] as const;
 export type Locale = (typeof LOCALES)[number];

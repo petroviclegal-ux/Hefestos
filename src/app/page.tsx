@@ -20,10 +20,10 @@ export default function RootRedirect() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Hefestos Capital — Investment Banking &amp; M&amp;A Advisory</title>
         <meta httpEquiv="refresh" content={`0; url=${target}`} />
-        <link rel="canonical" href="https://www.hefcap.com/en/" />
-        <link rel="alternate" hrefLang="en" href="https://www.hefcap.com/en/" />
-        <link rel="alternate" hrefLang="sr" href="https://www.hefcap.com/sr/" />
-        <link rel="alternate" hrefLang="x-default" href="https://www.hefcap.com/en/" />
+        <link rel="canonical" href="https://hefcap.com/en/" />
+        <link rel="alternate" hrefLang="en" href="https://hefcap.com/en/" />
+        <link rel="alternate" hrefLang="sr" href="https://hefcap.com/sr/" />
+        <link rel="alternate" hrefLang="x-default" href="https://hefcap.com/en/" />
         {/* eslint-disable-next-line react/no-danger */}
         <script dangerouslySetInnerHTML={{ __html: script }} />
       </head>
