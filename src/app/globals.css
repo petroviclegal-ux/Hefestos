@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-bone text-ink font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Consistent focus visibility across interactive elements. */
+  :focus-visible {
+    outline: 2px solid theme('colors.maroon.DEFAULT');
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: theme('colors.maroon.DEFAULT');
+    color: theme('colors.bone.DEFAULT');
+  }
+
+  /* Offset in-page anchor targets so the sticky header doesn't cover them. */
+  :target {
+    scroll-margin-top: 6rem;
+  }
+}
+
+@layer components {
+  /*
+   * Article prose styling for Insights content rendered from Markdown.
+   * Kept deliberately restrained to match the institutional tone.
+   */
+  .article-prose {
+    @apply text-ink/80;
+  }
+  .article-prose > * + * {
+    @apply mt-6;
+  }
+  .article-prose h2 {
+    @apply mt-14 mb-2 font-serif text-2xl leading-snug text-ink sm:text-3xl;
+  }
+  .article-prose h3 {
+    @apply mt-10 mb-1 font-serif text-xl leading-snug text-ink;
+  }
+  .article-prose p {
+    @apply text-base leading-relaxed sm:text-[1.0625rem];
+  }
+  .article-prose a {
+    @apply text-maroon-dark underline decoration-maroon/40 underline-offset-2 transition-colors hover:decoration-maroon;
+  }
+  .article-prose ul {
+    @apply list-disc space-y-2 pl-6 marker:text-maroon;
+  }
+  .article-prose ol {
+    @apply list-decimal space-y-2 pl-6 marker:text-maroon;
+  }
+  .article-prose li {
+    @apply leading-relaxed;
+  }
+  .article-prose strong {
+    @apply font-semibold text-ink;
+  }
+  .article-prose blockquote {
+    @apply border-l-2 border-maroon pl-5 italic text-ink/70;
+  }
+  .article-prose table {
+    @apply my-6 w-full border-collapse text-left text-sm;
+  }
+  .article-prose th {
+    @apply border-b border-ink/20 py-3 pr-4 font-sans text-xs uppercase tracking-wider text-ink/60;
+  }
+  .article-prose td {
+    @apply border-b border-ink/10 py-3 pr-4 align-top;
+  }
+  .article-prose hr {
+    @apply my-10 border-0 border-t border-ink/10;
+  }
+}
