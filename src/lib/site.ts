@@ -50,8 +50,8 @@ export const site = {
 
   contact: {
     email: 'office@hefcap.com',
-    phone: '+381 11 30 20 000',
-    phoneHref: '+381113020000',
+    phone: '+381 11 30 20 010',
+    phoneHref: '+381113020010',
     // TODO(client): confirm official LinkedIn company page URL.
     linkedin: '',
   },
