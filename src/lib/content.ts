@@ -341,6 +341,13 @@ const en: SiteContent = {
           'He advises clients across the full transaction lifecycle — from origination and structuring through negotiation and closing — with particular experience in complex, time-sensitive mandates.',
         ],
       },
+      {
+        slug: 'ivana-simic',
+        name: 'Ivana Simić',
+        role: 'Office Manager',
+        photo: '/images/team/ivana-simic.jpg',
+        bio: [],
+      },
     ],
     teamToggle: 'The rest of our team',
     team: [
@@ -624,6 +631,13 @@ const sr: SiteContent = {
           'Stefan Petrović je Partner u Hefestos Capital-u, sa fokusom na spajanja i akvizicije (M&A) i specijalne situacije.',
           'Savetuje klijente kroz ceo životni ciklus transakcije — od iniciranja i strukturiranja, preko pregovaranja do zatvaranja — sa posebnim iskustvom u složenim, vremenski osetljivim mandatima.',
         ],
+      },
+      {
+        slug: 'ivana-simic',
+        name: 'Ivana Simić',
+        role: 'Office Manager',
+        photo: '/images/team/ivana-simic.jpg',
+        bio: [],
       },
     ],
     teamToggle: 'Ostali članovi tima',
