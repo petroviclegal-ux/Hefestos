@@ -316,7 +316,7 @@ const en: SiteContent = {
     note: 'Selected representative transactions available on request.',
   },
   management: {
-    kicker: 'Management',
+    kicker: 'Team',
     title: 'Senior people, senior attention',
     lead:
       'Our leadership brings decades of investment banking experience across Europe, the Middle East and the emerging markets we serve.',
@@ -607,7 +607,7 @@ const sr: SiteContent = {
     note: 'Odabrane reprezentativne transakcije dostupne su na zahtev.',
   },
   management: {
-    kicker: 'Menadžment',
+    kicker: 'Članovi tima',
     title: 'Iskusni ljudi, iskusna pažnja',
     lead:
       'Naše rukovodstvo donosi decenije iskustva u investicionom bankarstvu širom Evrope, Bliskog istoka i tržišta u razvoju koja opslužujemo.',
