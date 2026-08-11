@@ -322,16 +322,6 @@ const en: SiteContent = {
       'Our leadership brings decades of investment banking experience across Europe, the Middle East and the emerging markets we serve.',
     people: [
       {
-        slug: 'alexey-kichaykin',
-        name: 'Alexey Kichaykin',
-        role: 'Chief Executive Officer',
-        photo: '/images/team/alexey-kichaykin.jpg',
-        bio: [
-          'Alexey Kichaykin has more than 20 years of investment banking experience across Europe and the Middle East.',
-          'Prior to Hefestos Capital, he held senior roles at Seagull Capital, Renaissance Capital and PwC, advising clients on mergers, acquisitions and capital markets transactions.',
-        ],
-      },
-      {
         slug: 'stefan-petrovic',
         name: 'Stefan Petrović',
         role: 'Partner',
@@ -342,10 +332,48 @@ const en: SiteContent = {
         ],
       },
       {
+        slug: 'alexey-kichaykin',
+        name: 'Alexey Kichaykin',
+        role: 'Chief Executive Officer',
+        photo: '/images/team/alexey-kichaykin.jpg',
+        bio: [
+          'Alexey Kichaykin has more than 20 years of investment banking experience across Europe and the Middle East.',
+          'Prior to Hefestos Capital, he held senior roles at Seagull Capital, Renaissance Capital and PwC, advising clients on mergers, acquisitions and capital markets transactions.',
+        ],
+      },
+      {
         slug: 'ivana-simic',
         name: 'Ivana Simić',
         role: 'Business Development Manager',
         photo: '/images/team/ivana-simic.jpg',
+        bio: [],
+      },
+      {
+        slug: 'samir-shalabi',
+        name: 'Samir Shalabi',
+        role: 'Middle East Representative',
+        photo: '/images/team/samir-shalabi.jpg',
+        bio: [],
+      },
+      {
+        slug: 'igor-protic',
+        name: 'Igor Protić',
+        role: 'Analyst',
+        photo: '/images/team/igor-protic.jpg',
+        bio: [],
+      },
+      {
+        slug: 'igor-golubovic',
+        name: 'Igor Golubović',
+        role: 'Legal Advisor',
+        photo: '/images/team/igor-golubovic.jpg',
+        bio: [],
+      },
+      {
+        slug: 'anja-djokic',
+        name: 'Anja Đokić',
+        role: 'Financial Advisor',
+        photo: '/images/team/anja-djokic.jpg',
         bio: [],
       },
     ],
@@ -353,10 +381,6 @@ const en: SiteContent = {
     team: [
       { name: 'Pavle Kavran', role: 'Senior Advisor' },
       { name: 'Milutin Nikolić', role: 'Senior Advisor' },
-      { name: 'Anja Đokić', role: 'Financial Advisor' },
-      { name: 'Igor Golubović', role: 'Legal Advisor' },
-      { name: 'Igor Protić', role: 'Analyst' },
-      { name: 'Samir Shalabi', role: 'Middle East Representative' },
     ],
   },
   contact: {
@@ -613,16 +637,6 @@ const sr: SiteContent = {
       'Naše rukovodstvo donosi decenije iskustva u investicionom bankarstvu širom Evrope, Bliskog istoka i tržišta u razvoju na kojima poslujemo.',
     people: [
       {
-        slug: 'alexey-kichaykin',
-        name: 'Alexey Kichaykin',
-        role: 'Izvršni direktor (CEO)',
-        photo: '/images/team/alexey-kichaykin.jpg',
-        bio: [
-          'Alexey Kichaykin ima više od 20 godina iskustva u investicionom bankarstvu širom Evrope i Bliskog istoka.',
-          'Pre Hefestos Capital-a, obavljao je rukovodeće funkcije u Seagull Capital-u, Renaissance Capital-u i PwC-u, savetujući klijente o spajanjima, akvizicijama i transakcijama na tržištima kapitala.',
-        ],
-      },
-      {
         slug: 'stefan-petrovic',
         name: 'Stefan Petrović',
         role: 'Partner',
@@ -633,10 +647,48 @@ const sr: SiteContent = {
         ],
       },
       {
+        slug: 'alexey-kichaykin',
+        name: 'Alexey Kichaykin',
+        role: 'Izvršni direktor (CEO)',
+        photo: '/images/team/alexey-kichaykin.jpg',
+        bio: [
+          'Alexey Kichaykin ima više od 20 godina iskustva u investicionom bankarstvu širom Evrope i Bliskog istoka.',
+          'Pre Hefestos Capital-a, obavljao je rukovodeće funkcije u Seagull Capital-u, Renaissance Capital-u i PwC-u, savetujući klijente o spajanjima, akvizicijama i transakcijama na tržištima kapitala.',
+        ],
+      },
+      {
         slug: 'ivana-simic',
         name: 'Ivana Simić',
         role: 'Business Development Manager',
         photo: '/images/team/ivana-simic.jpg',
+        bio: [],
+      },
+      {
+        slug: 'samir-shalabi',
+        name: 'Samir Shalabi',
+        role: 'Predstavnik za Bliski istok',
+        photo: '/images/team/samir-shalabi.jpg',
+        bio: [],
+      },
+      {
+        slug: 'igor-protic',
+        name: 'Igor Protić',
+        role: 'Analitičar',
+        photo: '/images/team/igor-protic.jpg',
+        bio: [],
+      },
+      {
+        slug: 'igor-golubovic',
+        name: 'Igor Golubović',
+        role: 'Pravni savetnik',
+        photo: '/images/team/igor-golubovic.jpg',
+        bio: [],
+      },
+      {
+        slug: 'anja-djokic',
+        name: 'Anja Đokić',
+        role: 'Finansijski savetnik',
+        photo: '/images/team/anja-djokic.jpg',
         bio: [],
       },
     ],
@@ -644,10 +696,6 @@ const sr: SiteContent = {
     team: [
       { name: 'Pavle Kavran', role: 'Viši savetnik' },
       { name: 'Milutin Nikolić', role: 'Viši savetnik' },
-      { name: 'Anja Đokić', role: 'Finansijski savetnik' },
-      { name: 'Igor Golubović', role: 'Pravni savetnik' },
-      { name: 'Igor Protić', role: 'Analitičar' },
-      { name: 'Samir Shalabi', role: 'Predstavnik za Bliski istok' },
     ],
   },
   contact: {
