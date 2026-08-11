@@ -344,7 +344,7 @@ const en: SiteContent = {
       {
         slug: 'ivana-simic',
         name: 'Ivana Simić',
-        role: 'Office Manager',
+        role: 'Business Development Manager',
         photo: '/images/team/ivana-simic.jpg',
         bio: [],
       },
@@ -418,9 +418,9 @@ const sr: SiteContent = {
       'Hefestos Capital je nezavisna investiciono-bankarska i M&A savetodavna firma. Pomažemo vlasnicima, kompanijama i institucijama da prodaju, kupe, spoje kompanije i prikupe kapital na tržištima u razvoju Evrope, Azije i Afrike.',
     heroPrimary: 'Razgovarajmo o transakciji',
     heroSecondary: 'Čime se bavimo',
-    introHeading: 'Pouzdan savetnik za transakcije koje definišu poslovanje',
+    introHeading: 'Pouzdan savetnik za transakcije koje oblikuju budućnost kompanije',
     introBody: [
-      'Nazvan po Hefestu, grčkom bogu vatre i zanatstva, Hefestos Capital spaja strast za stvaranjem vrednosti sa umećem osmišljavanja i sprovođenja složenih transakcija koje definišu industriju.',
+      'Nazvan po Hefestu, grčkom bogu vatre i zanatstva, Hefestos Capital spaja strast za stvaranjem vrednosti sa umećem osmišljavanja i sprovođenja složenih transakcija koje oblikuju čitave industrije.',
       'Od 2001. godine naš multinacionalni tim savetuje vlade, javna i privatna preduzeća, porodične firme, private equity fondove, porodične kancelarije i suverene investicione fondove — kao jedinstvena, iskusna tačka kontakta od prvog razgovora do zatvaranja transakcije.',
     ],
     statsHeading: 'Dve decenije rezultata',
@@ -443,13 +443,13 @@ const sr: SiteContent = {
   ],
   about: {
     kicker: 'Ko smo mi',
-    title: 'Nezavisni partner za transakcije koje definišu',
+    title: 'Nezavisni partner za prelomne transakcije',
     lead:
       'Hefestos Capital je nezavisna investiciono-bankarska firma u vlasništvu zaposlenih, osnovana 2001. godine, koja savetuje klijente o spajanjima, akvizicijama i prikupljanju kapitala na tržištima u razvoju.',
     body: [
-      'Nazvan po Hefestu — grčkom bogu vatre i zanatstva — firma je izgrađena na jednostavnoj ideji: spojiti iskrenu strast za stvaranjem vrednosti za klijente i investitore sa pažnjom i umećem potrebnim za osmišljavanje i sprovođenje složenih transakcija koje definišu industriju.',
-      'Naš tim okuplja iskusne, multinacionalne profesionalce sa praktičnim znanjem tržišta u razvoju Evrope, Azije i Afrike. Savetujemo širok krug klijenata — od vlada i velikih korporacija do porodičnih firmi i finansijskih investitora — i ostajemo iskusni i praktično uključeni u svakoj fazi mandata.',
-      'Nezavisnost je centralna u načinu na koji radimo. Pošto nismo vezani za kreditni bilans ili prodaju proizvoda, naši saveti su bez sukoba interesa i u potpunosti usklađeni sa interesima naših klijenata.',
+      'Nazvan po Hefestu — grčkom bogu vatre i zanatstva — firma je izgrađena na jednostavnoj ideji: spojiti iskrenu strast za stvaranjem vrednosti za klijente i investitore sa pažnjom i umećem potrebnim za osmišljavanje i sprovođenje složenih transakcija koje oblikuju čitave industrije.',
+      'Naš tim okuplja iskusne, multinacionalne profesionalce sa praktičnim poznavanjem tržišta u razvoju Evrope, Azije i Afrike. Savetujemo širok krug klijenata — od vlada i velikih korporacija do porodičnih firmi i finansijskih investitora — i ostajemo neposredno i iskusno uključeni u svakoj fazi mandata.',
+      'Nezavisnost oblikuje sve što radimo. Bez sopstvenih proizvoda koje bismo plasirali i bez kreditnog bilansa iza sebe, u potpunosti se posvećujemo jednom pitanju — šta donosi najveću vrednost našem klijentu.',
     ],
     valuesHeading: 'Kako radimo',
     values: [
@@ -541,9 +541,9 @@ const sr: SiteContent = {
   },
   sectors: {
     kicker: 'Sektori',
-    title: 'Gde donosimo dubinu',
+    title: 'Sektori u kojima imamo dubinsko iskustvo',
     lead:
-      'Spajamo široko transakciono iskustvo sa fokusiranim poznavanjem sektora u industrijama koje pokreću rast tržišta u razvoju.',
+      'Spajamo široko transakciono iskustvo sa fokusiranim poznavanjem sektora koji pokreću rast tržišta u razvoju.',
     items: [
       {
         slug: 'retail',
@@ -563,7 +563,7 @@ const sr: SiteContent = {
       {
         slug: 'financial-services',
         name: 'Finansijske usluge',
-        body: 'Banke, osiguravači i specijalizovane finansije — M&A, prikupljanje kapitala i strateška partnerstva.',
+        body: 'Banke, osiguravajuća društva i specijalizovane finansijske institucije — M&A, prikupljanje kapitala i strateška partnerstva.',
       },
       {
         slug: 'industrials',
@@ -581,9 +581,9 @@ const sr: SiteContent = {
     kicker: 'Reference',
     title: 'Rezultati koji govore',
     lead:
-      'Od 2002. godine Hefestos Capital je savetovao u stotinama transakcija na tržištima u razvoju — za klijente od suverenih entiteta do porodičnih firmi.',
+      'Od 2002. godine Hefestos Capital je savetovao u stotinama transakcija na tržištima u razvoju — za klijente od državnih institucija do porodičnih firmi.',
     body: [
-      'Naše iskustvo obuhvata prodaju i kupovinu (sell-side i buy-side M&A), prikupljanje kapitala, zajednička ulaganja i posebne situacije širom Evrope, Azije i Afrike. Savetovali smo vlade, javna i privatna preduzeća, porodične firme, private equity fondove, porodične kancelarije i suverene investicione fondove.',
+      'Naše iskustvo obuhvata prodaju i kupovinu (sell-side i buy-side M&A), prikupljanje kapitala, zajednička ulaganja i specijalne situacije širom Evrope, Azije i Afrike. Savetovali smo vlade, javna i privatna preduzeća, porodične firme, private equity fondove, porodične kancelarije i suverene investicione fondove.',
       'Brojke ispod odražavaju kumulativno iskustvo firme i njenih profesionalaca.',
     ],
     highlightsHeading: 'U brojkama',
@@ -610,7 +610,7 @@ const sr: SiteContent = {
     kicker: 'Članovi tima',
     title: 'Iskusni ljudi, iskusna pažnja',
     lead:
-      'Naše rukovodstvo donosi decenije iskustva u investicionom bankarstvu širom Evrope, Bliskog istoka i tržišta u razvoju koja opslužujemo.',
+      'Naše rukovodstvo donosi decenije iskustva u investicionom bankarstvu širom Evrope, Bliskog istoka i tržišta u razvoju na kojima poslujemo.',
     people: [
       {
         slug: 'alexey-kichaykin',
@@ -635,7 +635,7 @@ const sr: SiteContent = {
       {
         slug: 'ivana-simic',
         name: 'Ivana Simić',
-        role: 'Office Manager',
+        role: 'Business Development Manager',
         photo: '/images/team/ivana-simic.jpg',
         bio: [],
       },
