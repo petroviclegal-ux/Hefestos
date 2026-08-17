@@ -375,6 +375,39 @@ const en: Article[] = [
       { kind: 'p', text: 'This document is informational only. It does not constitute investment advice, a recommendation to buy or sell any asset, or a legal opinion; the data is drawn from the public sources cited in the original edition and has not been independently audited. Sources include the Statistical Office of Serbia, MAT, the Quarterly Monitor, the Vienna Institute (wiiw), the European Commission and the National Bank of Serbia; announcements by MOL, Raiffeisen Bank International and PPF Group; Deutsche Börse and Austrian Takeover Commission filings; EY M&A activity insights (June 2026); Reuters; and reporting by Bloomberg Adria, Biznis.rs and regional business media.' },
     ],
   },
+  {
+    slug: 'selling-a-family-business',
+    date: '2026-08-18',
+    title: 'Selling a Family Business: Succession and Sale',
+    description:
+      'Selling a family business is not only a transaction but a transition. Here is how to balance value and legacy — and prepare for both.',
+    keywords: [
+      'selling a family business',
+      'family business succession',
+      'family company sale',
+      'business exit',
+      'succession planning',
+    ],
+    body: [
+      { kind: 'p', text: 'Family businesses are different. A sale is not only a transaction but the transition of something built over a lifetime, often across generations. The financial questions are the same as in any sale; the human ones are not — and they shape both the decision and the process.' },
+      { kind: 'h2', text: 'Why a family business is different' },
+      { kind: 'p', text: 'For most owners, the company is bound up with identity, reputation in the community, and long-standing relationships with employees who can feel like family. These attachments are real and legitimate, and they belong in the conversation alongside the numbers. Ignoring them tends to produce a worse outcome, not a more rational one.' },
+      { kind: 'h2', text: 'The succession question' },
+      { kind: 'p', text: 'Often the trigger for a sale is succession: there is no next generation willing or able to take over, or there are several heirs with different visions for the business. A well-run sale can be the cleanest way to secure the value the family has built, provide fairly for each member, and avoid a conflict that could damage both the company and the relationships around it.' },
+      { kind: 'h2', text: 'Preparing a family business for sale' },
+      { kind: 'ul', items: [
+        'Reduce dependence on the founder — delegate key relationships and document how the business runs.',
+        'Professionalise management and reporting, so the numbers withstand scrutiny.',
+        'Separate personal and business finances and assets — a common issue in family firms.',
+        'Resolve ownership questions among family members before going to market, not during.',
+      ] },
+      { kind: 'h2', text: 'Choosing the right buyer' },
+      { kind: 'p', text: 'Price is not the only factor. Many family owners care deeply about what happens next — to the employees, the brand and the place the company holds in its community. A strategic buyer, a financial sponsor, or a partial sale each carry different implications for continuity. The right process surfaces those differences early, so the choice is made with eyes open.' },
+      { kind: 'h2', text: 'Structuring for continuity' },
+      { kind: 'p', text: 'A sale does not have to be all-or-nothing. Partial sales, earn-outs, a defined transition period in which the owner stays on, or a management buyout can bridge the gap between exit and legacy — letting an owner realise value while the business, and the people in it, are handed over carefully.' },
+      { kind: 'p', text: 'An experienced adviser helps balance value and legacy, runs a confidential process, and manages the family dynamics that a purely financial adviser might overlook. As with any sale, the earliest conversations — often years ahead of a transaction — are the most valuable.' },
+    ],
+  },
 ];
 
 const sr: Article[] = [
@@ -727,6 +760,39 @@ const sr: Article[] = [
         'Kakva će biti struktura cena? Rast udela odloženih i uslovljenih plaćanja pratimo kao glavni pokazatelj toga koliko se rizik seli sa kupca na prodavca.',
       ] },
       { kind: 'p', text: 'Ovaj dokument je informativnog karaktera. Ne predstavlja investicioni savet, preporuku za kupovinu ili prodaju bilo koje imovine, niti pravno mišljenje; podaci su preuzeti iz javno dostupnih izvora navedenih u originalnom izdanju i nisu nezavisno revidirani. Izvori uključuju Republički zavod za statistiku, MAT, Kvartalni monitor, Bečki institut (wiiw), Evropsku komisiju i Narodnu banku Srbije; saopštenja MOL-a, Raiffeisen Bank International i PPF Group; objave na Nemačkoj berzi i obaveštenja austrijske Komisije za preuzimanja; EY M&A activity insights (jun 2026); Reuters; i izveštavanje Bloomberg Adrije, Biznis.rs i regionalnih poslovnih medija.' },
+    ],
+  },
+  {
+    slug: 'selling-a-family-business',
+    date: '2026-08-18',
+    title: 'Prodaja porodične firme: nasleđe i tranzicija',
+    description:
+      'Prodaja porodične firme nije samo transakcija, već i tranzicija. Evo kako uskladiti vrednost i nasleđe — i pripremiti se za oboje.',
+    keywords: [
+      'prodaja porodične firme',
+      'nasleđivanje porodičnog biznisa',
+      'tranzicija porodične firme',
+      'izlazak iz vlasništva',
+      'planiranje nasleđivanja',
+    ],
+    body: [
+      { kind: 'p', text: 'Porodične firme su drugačije. Prodaja nije samo transakcija, već tranzicija nečega što je građeno čitavog života, često kroz generacije. Finansijska pitanja ista su kao u svakoj prodaji; ljudska nisu — a upravo ona oblikuju i odluku i sam proces.' },
+      { kind: 'h2', text: 'Zašto je porodična firma drugačija' },
+      { kind: 'p', text: 'Za većinu vlasnika, kompanija je nerazdvojiva od identiteta, ugleda u zajednici i dugogodišnjih odnosa sa zaposlenima koji često deluju kao deo porodice. Te veze su stvarne i legitimne i pripadaju razgovoru jednako kao i brojke. Njihovo zanemarivanje po pravilu vodi lošijem, a ne racionalnijem ishodu.' },
+      { kind: 'h2', text: 'Pitanje nasleđivanja' },
+      { kind: 'p', text: 'Povod za prodaju često je nasleđivanje: nema naredne generacije koja želi ili može da preuzme posao, ili postoji više naslednika sa različitim viđenjima budućnosti firme. Dobro vođena prodaja može biti najčistiji način da se osigura vrednost koju je porodica izgradila, da se svaki član pravično obezbedi i da se izbegne sukob koji bi mogao da naškodi i kompaniji i odnosima oko nje.' },
+      { kind: 'h2', text: 'Kako pripremiti porodičnu firmu za prodaju' },
+      { kind: 'ul', items: [
+        'Smanjite zavisnost od osnivača — prenesite ključne odnose i dokumentujte način na koji poslovanje funkcioniše.',
+        'Profesionalizujte menadžment i izveštavanje, kako bi brojke izdržale proveru.',
+        'Razdvojite lične i poslovne finansije i imovinu — čest problem u porodičnim firmama.',
+        'Rešite pitanja vlasništva unutar porodice pre izlaska na tržište, a ne tokom procesa.',
+      ] },
+      { kind: 'h2', text: 'Izbor pravog kupca' },
+      { kind: 'p', text: 'Cena nije jedini faktor. Mnogim porodičnim vlasnicima je veoma stalo do toga šta sledi — do zaposlenih, brenda i mesta koje kompanija ima u svojoj sredini. Strateški kupac, finansijski investitor ili delimična prodaja nose različite posledice po kontinuitet. Dobro vođen proces te razlike iznosi na videlo na vreme, pa se odluka donosi otvorenih očiju.' },
+      { kind: 'h2', text: 'Strukturiranje radi kontinuiteta' },
+      { kind: 'p', text: 'Prodaja ne mora biti „sve ili ništa". Delimična prodaja, earn-out, definisan prelazni period u kome vlasnik ostaje u firmi, ili menadžment otkup (MBO) mogu premostiti razliku između izlaska i nasleđa — omogućavajući vlasniku da realizuje vrednost dok se posao, i ljudi u njemu, pažljivo predaju.' },
+      { kind: 'p', text: 'Iskusan savetnik pomaže da se usklade vrednost i nasleđe, vodi poverljiv proces i upravlja porodičnom dinamikom koju bi čisto finansijski savetnik mogao da previdi. Kao i u svakoj prodaji, najraniji razgovori — često godinama pre transakcije — najvredniji su.' },
     ],
   },
 ];
