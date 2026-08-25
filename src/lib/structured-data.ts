@@ -102,6 +102,8 @@ export function articleSchema(input: {
   path: string;
   datePublished: string;
   locale: Locale;
+  /** Optional cover image path, e.g. '/images/insights/foo.jpg'. */
+  image?: string;
 }) {
   return {
     '@context': 'https://schema.org',
@@ -109,6 +111,7 @@ export function articleSchema(input: {
     headline: input.title,
     description: input.description,
     inLanguage: input.locale,
+    ...(input.image ? { image: [absoluteUrl(input.image)] } : {}),
     datePublished: input.datePublished,
     dateModified: input.datePublished,
     author: { '@type': 'Organization', name: site.name, url: site.url },

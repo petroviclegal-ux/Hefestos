@@ -32,6 +32,7 @@ export function generateMetadata({
     keywords: a.keywords,
     type: 'article',
     publishedTime: a.date,
+    ogImage: a.cover?.src,
   });
 }
 
@@ -81,6 +82,24 @@ export default function ArticlePage({ params }: { params: { locale: string; slug
                 day: 'numeric',
               })}
             </time>
+            {a.cover ? (
+              <figure className="mt-6">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={a.cover.src}
+                  alt={a.cover.alt}
+                  className="aspect-[4/3] w-full bg-bone-200/50 object-cover object-top"
+                  loading="eager"
+                  decoding="async"
+                />
+                {a.cover.caption ? (
+                  <figcaption className="mt-3 text-xs font-sans uppercase tracking-[0.14em] text-ink/45">
+                    {a.cover.caption}
+                  </figcaption>
+                ) : null}
+              </figure>
+            ) : null}
+
             <div className="article-prose mt-6">{a.body.map(renderBlock)}</div>
 
             <div className="mt-12 border-t border-ink/10 pt-8">
@@ -121,6 +140,7 @@ export default function ArticlePage({ params }: { params: { locale: string; slug
           path,
           datePublished: a.date,
           locale,
+          image: a.cover?.src,
         })}
       />
     </>

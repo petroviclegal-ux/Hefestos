@@ -20,6 +20,11 @@ export type Article = {
   title: string;
   description: string;
   keywords: string[];
+  /**
+   * Optional cover photograph, shown above the article body and used as the
+   * Open Graph card image. Swap the file in /public/images to change it.
+   */
+  cover?: { src: string; alt: string; caption?: string };
   body: Block[];
 };
 
@@ -485,6 +490,46 @@ const en: Article[] = [
       { kind: 'p', text: 'The most valuable conversation is the one that happens before the situation becomes urgent — while refinancing, a partial sale and a full sale are all still genuinely on the table, and the choice between them still belongs to the owner. Advice on special situations is confidential by nature, and an initial discussion commits you to nothing.' },
     ],
   },
+  {
+    slug: 'interview-stefan-petrovic-h1-2026-market-review',
+    date: '2026-08-25',
+    title: 'Interview with Stefan Petrović: Lessons from H1 2026',
+    description:
+      'Partner Stefan Petrović on our H1 2026 market review — why the higher offer lost at Addiko, what delay actually costs, and why domestic buyers change the game.',
+    keywords: [
+      'Stefan Petrović interview',
+      'Hefestos Capital',
+      'M&A Serbia',
+      'Addiko takeover RBI NLB',
+      'NIS MOL',
+      'selling a company Serbia',
+    ],
+    cover: {
+      src: '/images/insights/stefan-petrovic-interview.jpg',
+      alt: 'Stefan Petrović, Partner at Hefestos Capital',
+      caption: 'Stefan Petrović, Partner, Hefestos Capital',
+    },
+    body: [
+      { kind: 'p', text: 'In August, Hefestos Capital published its first Half-Year Market Review, covering mergers and acquisitions in Southeast Europe from January to June 2026. We sat down with Stefan Petrović, Partner, to ask what that half-year means for an owner weighing a sale — and what the region’s two largest transactions teach a company that will never appear on a front page.' },
+      { kind: 'h2', text: 'The review opens by refusing to estimate the data that had not been published. Why make a point of that?' },
+      { kind: 'p', text: 'Because the alternative is how most market commentary gets written. Aggregate half-year figures for the region were not out when we wrote, and we could have produced a number nobody would ever check. The moment you do that once, everything else you publish is worth less. An owner deciding whether to sell a company built over twenty years deserves to know which of our statements are verifiable and which are opinion. Where the number does not exist, we say so — and I would apply the same test to any adviser who quotes you a market multiple. Ask where it comes from.' },
+      { kind: 'h2', text: 'The clearest lesson of the half-year looks like Addiko: the lower offer won. How does that translate to a company with five million euros of revenue?' },
+      { kind: 'p', text: 'Almost directly. NLB offered thirty-seven euros a share, RBI twenty-six fifty, and RBI collected the shares. Shareholders were not being irrational. They were comparing price multiplied by the probability that the money actually arrives — and RBI had made its offer more certain by lowering its acceptance threshold. That calculation exists in every transaction, at every size. When two offers land on the table for a mid-market company, the questions that decide the outcome are these: does the buyer have committed financing, how many conditions stand between signing and payment, how much of the price is paid on day one, and what happens if a regulator says no. In my experience owners here read the headline number and stop reading. The terms are the price.' },
+      { kind: 'h2', text: 'On NIS, deadlines moved at least three times. What does delay actually cost?' },
+      { kind: 'p', text: 'It is a line item in the price, even though it never appears as one. A company operating under public uncertainty spends its own value while it waits — key people update their CVs, investment decisions are postponed, suppliers quietly shorten terms, competitors use the story in sales meetings. The seller’s negotiating position decays alongside it, because a buyer who knows you have been in a process for fourteen months knows exactly how badly you want it to end. NIS is an extreme case, with a government and a foreign administration at the table. The mechanism is identical in a small transaction that drags because the financials were never in order.' },
+      { kind: 'h2', text: 'Global deal value is up more than twenty per cent while deal count is falling. Good news or bad news here?' },
+      { kind: 'p', text: 'Neither, and it is routinely misread. The value figure is being pushed up by a few dozen enormous transactions — in technology, value rose nearly fifty per cent while the number of deals fell. That tells you the market is growing at the top. It does not make it easier to sell a company with five million euros of revenue. The more useful number for our clients is the one nobody quotes: deal count is down. Buyers are doing fewer transactions, selecting harder and walking away faster. When selection is that sharp, being ready is not an advantage — it is the price of entry.' },
+      { kind: 'h2', text: 'Foreign investment inflows fell almost forty-four per cent. Should an owner planning a sale be worried?' },
+      { kind: 'p', text: 'Less than the headline suggests, because FDI and M&A are not the same thing. Foreign direct investment includes greenfield construction, recapitalisations and intercompany loans — far more than the purchase of existing companies. A fall speaks mainly to greenfield: less is being built new. For someone selling a running business that is close to neutral, and it can even be favourable. When building from scratch is more expensive and slower, buying something that already works becomes relatively more attractive — provided it survives scrutiny once a buyer opens the books.' },
+      { kind: 'h2', text: 'The review calls domestic buyers the most interesting pattern of the half-year. Why does that matter more than the headline deals?' },
+      { kind: 'p', text: 'Because it changes the arithmetic of every sale process in this market. For years the story was foreign companies buying domestic ones, which means one type of buyer and one type of negotiation. Now MK Group is acquiring, Nelt has announced four hundred million euros of investment with roughly half earmarked for acquisitions, and BDS Co has launched a takeover across eight European countries. Price is set by the number of genuinely interested parties, not by a valuation model. A regional buyer also has a practical edge: it knows the terrain, completes diligence faster, and is not frightened by local specifics that read as risk to someone in Vienna or Munich. For owners, that is the most concrete good news of the half-year.' },
+      { kind: 'h2', text: 'One thing an owner should take from this half-year into a decision this autumn?' },
+      { kind: 'p', text: 'Separate announced from closed in your own thinking, and then act early. The two biggest transactions in the region were announced and neither closed on time. A deal is news the day it is signed and real the day the money lands, and a great deal can be lost between those two dates. The practical consequence is that preparation has to start before you need it — cleaning up the financials, reducing dependence on the owner, resolving shareholder questions. That work costs comparatively little, and it is the cheapest value creation available to a private company. Nobody has ever regretted being ready a year too early.' },
+      { kind: 'h2', text: 'And what are you watching to year-end?' },
+      { kind: 'p', text: 'Whether NIS closes in 2026, because it bears on how predictable this market looks from outside. How the carve-out of Addiko’s regional banks proceeds. Whether the fall in foreign investment stabilises or turns out to be an exhausted growth model. And above all the structure of prices rather than the level — the share of consideration that is deferred, conditional or tied to an earn-out. That share is the clearest single signal of risk moving from the buyer to the seller, and it is the number I would watch most closely if I were selling next year.' },
+      { kind: 'p', text: 'The Half-Year Market Review discussed in this interview is published in full in our Insights section. The views expressed here are general commentary on public information and do not constitute investment advice or a recommendation in relation to any company or security.' },
+    ],
+  },
 ];
 
 const sr: Article[] = [
@@ -947,6 +992,46 @@ const sr: Article[] = [
       { kind: 'h2', text: 'Redosled i vreme' },
       { kind: 'p', text: 'Na početku su sve navedene opcije otvorene. Svaka se zatvara u drugom trenutku, kako se troše likvidnost, kvalitet informacija i pregovaračka pozicija. Vlasnici po pravilu potcenjuju i koliko koji put traje: refinansiranje se meri mesecima, prikupljanje kapitala ili prodaja obično traju od šest do dvanaest meseci, dok se strpljenje poverioca meri nedeljama. Započeti dvanaestomesečni proces sa gotovinom za šest meseci upravo je ono što rešivu situaciju pretvara u situaciju pod pritiskom.' },
       { kind: 'p', text: 'Najvredniji razgovor je onaj koji se vodi pre nego što situacija postane hitna — dok su refinansiranje, delimična prodaja i potpuna prodaja još uvek stvarno na stolu, a izbor između njih još uvek pripada vlasniku. Savetovanje u specijalnim situacijama po prirodi je poverljivo, a prvi razgovor ni na šta ne obavezuje.' },
+    ],
+  },
+  {
+    slug: 'interview-stefan-petrovic-h1-2026-market-review',
+    date: '2026-08-25',
+    title: 'Intervju sa Stefanom Petrovićem: pouke prve polovine 2026',
+    description:
+      'Partner Stefan Petrović o pregledu tržišta za prvu polovinu 2026 — zašto je kod Addika izgubila viša ponuda, koliko košta odugovlačenje i šta menjaju domaći kupci.',
+    keywords: [
+      'intervju Stefan Petrović',
+      'Hefestos Capital',
+      'M&A Srbija',
+      'Addiko preuzimanje RBI NLB',
+      'NIS MOL',
+      'prodaja kompanije Srbija',
+    ],
+    cover: {
+      src: '/images/insights/stefan-petrovic-interview.jpg',
+      alt: 'Stefan Petrović, partner u Hefestos Capital-u',
+      caption: 'Stefan Petrović, partner, Hefestos Capital',
+    },
+    body: [
+      { kind: 'p', text: 'Hefestos Capital je u avgustu objavio svoj prvi polugodišnji pregled tržišta spajanja i preuzimanja u Jugoistočnoj Evropi, za period januar–jun 2026. Razgovarali smo sa Stefanom Petrovićem, partnerom, o tome šta to polugodište znači za vlasnika koji razmišlja o prodaji — i čemu dve najveće transakcije u regionu uče kompaniju koja nikada neće biti na naslovnoj strani.' },
+      { kind: 'h2', text: 'Pregled na samom početku odbija da proceni podatke koji nisu objavljeni. Zašto to naglašavate?' },
+      { kind: 'p', text: 'Zato što je alternativa način na koji se piše većina tržišnih komentara. Zbirni polugodišnji podaci za region u trenutku pisanja nisu bili objavljeni i mogli smo da izvedemo broj koji niko nikada ne bi proverio. Onog trenutka kada to jednom uradite, sve ostalo što objavite vredi manje. Vlasnik koji odlučuje da li da proda kompaniju građenu dvadeset godina zaslužuje da zna šta je od naših tvrdnji proverljivo, a šta je mišljenje. Tamo gde broja nema, tako i piše — a isti test bih primenio na svakog savetnika koji vam citira tržišni multiplikator. Pitajte odakle mu.' },
+      { kind: 'h2', text: 'Najjasnija pouka polugodišta deluje kao Addiko: pobedila je niža ponuda. Kako se to prevodi na kompaniju sa pet miliona evra prihoda?' },
+      { kind: 'p', text: 'Gotovo doslovno. NLB je nudio trideset sedam evra po akciji, RBI dvadeset šest i po, a akcije je prikupio RBI. Akcionari nisu bili neracionalni. Oni su poredili cenu pomnoženu verovatnoćom da novac zaista stigne — a RBI je svoju ponudu učinio izvesnijom time što je spustio prag uspešnosti. Taj račun postoji u svakoj transakciji, bez obzira na veličinu. Kada na sto za kompaniju srednje veličine stignu dve ponude, ishod određuju pitanja: da li kupac ima obezbeđeno finansiranje, koliko uslova stoji između potpisa i plaćanja, koliki deo cene se plaća prvog dana i šta se dešava ako regulator ne odobri. Po mom iskustvu, vlasnici kod nas pročitaju iznos i tu prestanu da čitaju. Uslovi jesu cena.' },
+      { kind: 'h2', text: 'Kod NIS-a je rok pomeran najmanje tri puta. Koliko zapravo košta odugovlačenje?' },
+      { kind: 'p', text: 'To je stavka u ceni, iako se nikada tako ne prikazuje. Kompanija koja posluje u javnoj neizvesnosti troši sopstvenu vrednost dok čeka — ključni ljudi ažuriraju biografije, investicione odluke se odlažu, dobavljači tiho skraćuju rokove, konkurencija tu priču koristi na sastancima sa kupcima. Uporedo sa tim slabi i pregovaračka pozicija prodavca, jer kupac koji zna da ste četrnaest meseci u procesu tačno zna koliko želite da se to završi. NIS je ekstreman slučaj, sa državom i stranom administracijom za stolom. Mehanizam je isti i u maloj transakciji koja se oteže zato što finansijski izveštaji nikada nisu bili sređeni.' },
+      { kind: 'h2', text: 'Globalna vrednost transakcija raste preko dvadeset odsto, a broj transakcija pada. Da li je to dobra ili loša vest za nas?' },
+      { kind: 'p', text: 'Ni jedno ni drugo, i po pravilu se pogrešno čita. Vrednost naviše guraju desetine ogromnih transakcija — u tehnologiji je vrednost porasla skoro pedeset odsto, dok je broj transakcija pao. To vam govori da tržište raste na vrhu. To ne čini prodaju kompanije sa pet miliona evra prihoda nimalo lakšom. Korisniji broj za naše klijente je onaj koji niko ne citira: broj transakcija opada. Kupci rade manje poslova, biraju oštrije i brže odustaju. Kada je selekcija tako oštra, spremnost nije prednost — ona je ulaznica.' },
+      { kind: 'h2', text: 'Priliv stranih ulaganja pao je skoro četrdeset četiri odsto. Treba li vlasnik koji planira prodaju da brine?' },
+      { kind: 'p', text: 'Manje nego što naslov sugeriše, jer SDI i M&A nisu ista stvar. Strane direktne investicije obuhvataju grinfild gradnju, dokapitalizacije i pozajmice unutar grupe — daleko više od kupovine postojećih kompanija. Pad govori pre svega o grinfildu: manje se gradi novo. Za nekoga ko prodaje poslovanje koje radi, to je gotovo neutralno, a ume da bude i povoljno. Kada je graditi od nule skuplje i sporije, kupiti nešto što već funkcioniše postaje relativno privlačnije — pod uslovom da to izdrži proveru kada kupac otvori knjige.' },
+      { kind: 'h2', text: 'U pregledu se domaći kupci navode kao najzanimljiviji obrazac polugodišta. Zašto je to važnije od velikih transakcija iz naslova?' },
+      { kind: 'p', text: 'Zato što menja aritmetiku svakog prodajnog procesa na ovom tržištu. Godinama je priča bila da strane kompanije kupuju domaće, što znači jedan tip kupca i jedan tip pregovora. Sada MK Group kupuje, Nelt je najavio četiristo miliona evra ulaganja sa otprilike polovinom namenjenom akvizicijama, a BDS Co je pokrenuo preuzimanje u osam evropskih zemalja. Cenu određuje broj stvarno zainteresovanih strana, a ne model procene. Regionalni kupac ima i praktičnu prednost: poznaje teren, brže završava dubinsku analizu i ne plaše ga lokalne specifičnosti koje nekome u Beču ili Minhenu deluju kao rizik. Za vlasnike je to najkonkretnija dobra vest polugodišta.' },
+      { kind: 'h2', text: 'Jedna stvar koju vlasnik treba da ponese iz ovog polugodišta u odluku ove jeseni?' },
+      { kind: 'p', text: 'Razdvojite objavljeno od zatvorenog u sopstvenoj glavi, a onda krenite na vreme. Dve najveće transakcije u regionu bile su objavljene i nijedna nije zatvorena u roku. Posao je vest onog dana kada se potpiše, a stvaran onog dana kada novac legne — a između ta dva datuma može se izgubiti mnogo. Praktična posledica je da priprema mora da počne pre nego što vam zatreba: sređivanje finansija, smanjivanje zavisnosti od vlasnika, rešavanje vlasničkih pitanja. Taj posao košta srazmerno malo i predstavlja najjeftinije stvaranje vrednosti koje privatnoj kompaniji stoji na raspolaganju. Niko nikada nije zažalio što je bio spreman godinu dana prerano.' },
+      { kind: 'h2', text: 'Šta pratite do kraja godine?' },
+      { kind: 'p', text: 'Da li će NIS biti zatvoren u 2026, jer to govori koliko ovo tržište spolja deluje predvidivo. Kako će teći izdvajanje i prodaja Addikovih regionalnih banaka. Da li se pad stranih ulaganja stabilizuje ili se pokazuje kao iscrpljen model rasta. I pre svega strukturu cena, a ne njihov nivo — koliki je deo naknade odložen, uslovljen ili vezan za earn-out. Taj udeo je najjasniji pojedinačni signal da rizik prelazi sa kupca na prodavca i to je broj koji bih najpažljivije pratio da prodajem sledeće godine.' },
+      { kind: 'p', text: 'Polugodišnji pregled tržišta o kome je reč u ovom intervjuu objavljen je u celini u našoj sekciji Analize. Iznesena mišljenja predstavljaju opšti komentar na javno dostupne informacije i ne čine investicioni savet niti preporuku u vezi sa bilo kojom kompanijom ili hartijom od vrednosti.' },
     ],
   },
 ];
