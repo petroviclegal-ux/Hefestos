@@ -104,6 +104,8 @@ export function articleSchema(input: {
   locale: Locale;
   /** Optional cover image path, e.g. '/images/insights/foo.jpg'. */
   image?: string;
+  /** Caption for the cover image, if it has one. */
+  imageCaption?: string;
 }) {
   return {
     '@context': 'https://schema.org',
@@ -111,7 +113,18 @@ export function articleSchema(input: {
     headline: input.title,
     description: input.description,
     inLanguage: input.locale,
-    ...(input.image ? { image: [absoluteUrl(input.image)] } : {}),
+    ...(input.image
+      ? {
+          image: [
+            {
+              '@type': 'ImageObject',
+              contentUrl: absoluteUrl(input.image),
+              url: absoluteUrl(input.image),
+              ...(input.imageCaption ? { caption: input.imageCaption } : {}),
+            },
+          ],
+        }
+      : {}),
     datePublished: input.datePublished,
     dateModified: input.datePublished,
     author: { '@type': 'Organization', name: site.name, url: site.url },
@@ -122,4 +135,30 @@ export function articleSchema(input: {
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': absoluteUrl(input.path) },
   };
+}
+
+/**
+ * Person entries for the team page — one per named individual, each with the
+ * portrait as `image`.
+ *
+ * Alt text describes a picture; it does not tell a search engine whose face is
+ * in it. Naming the file as the `image` of a Person with this name and job
+ * title is what lets the photograph be indexed as a picture *of that person*
+ * rather than as decoration on a page that happens to mention them.
+ */
+export function personSchema(input: {
+  people: { name: string; role: string; photo?: string; bio: string[] }[];
+  /** Locale-prefixed path of the page the people appear on. */
+  path: string;
+}) {
+  return input.people.map((p) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: p.name,
+    jobTitle: p.role,
+    description: p.bio[0],
+    ...(p.photo ? { image: absoluteUrl(p.photo) } : {}),
+    worksFor: { '@type': 'Organization', name: site.name, url: site.url },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': absoluteUrl(input.path) },
+  }));
 }

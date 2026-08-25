@@ -4,6 +4,8 @@ import { PageHero, BreadcrumbBar } from '@/components/PageHero';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { TeamPhoto } from '@/components/TeamPhoto';
 import { MonogramMark } from '@/components/MonogramMark';
+import { JsonLd } from '@/components/JsonLd';
+import { personSchema } from '@/lib/structured-data';
 import { buildMetadata } from '@/lib/seo';
 import { getContent } from '@/lib/content';
 import { getMessages, href } from '@/lib/i18n';
@@ -95,6 +97,13 @@ export default function ManagementPage({ params }: { params: { locale: string } 
           </div>
         </Container>
       </Section>
+
+      <JsonLd
+        data={personSchema({
+          people: c.people,
+          path: href(locale, NAV_PATHS.management),
+        })}
+      />
     </>
   );
 }

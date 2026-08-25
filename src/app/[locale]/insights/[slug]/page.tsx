@@ -141,6 +141,7 @@ export default function ArticlePage({ params }: { params: { locale: string; slug
           datePublished: a.date,
           locale,
           image: a.cover?.src,
+          imageCaption: a.cover?.caption,
         })}
       />
     </>
