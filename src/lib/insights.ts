@@ -25,6 +25,12 @@ export type Article = {
    * Open Graph card image. Swap the file in /public/images to change it.
    */
   cover?: { src: string; alt: string; caption?: string };
+  /**
+   * For an interview: the person the article is about. `slug` must match that
+   * person's slug in content.ts, which is what ties the cover photograph here
+   * to their portrait on the team page as one and the same individual.
+   */
+  about?: { slug: string; name: string; jobTitle: string };
   body: Block[];
 };
 
@@ -509,6 +515,7 @@ const en: Article[] = [
       alt: 'Stefan Petrović, Partner at Hefestos Capital',
       caption: 'Stefan Petrović, Partner, Hefestos Capital',
     },
+    about: { slug: 'stefan-petrovic', name: 'Stefan Petrović', jobTitle: 'Partner' },
     body: [
       { kind: 'p', text: 'In August, Hefestos Capital published its first Half-Year Market Review, covering mergers and acquisitions in Southeast Europe from January to June 2026. We sat down with Stefan Petrović, Partner, to ask what that half-year means for an owner weighing a sale, and what the region’s two largest transactions teach a company that will never appear on a front page.' },
       { kind: 'h2', text: 'The review opens by refusing to estimate the data that had not been published. Why make a point of that?' },
@@ -1013,6 +1020,7 @@ const sr: Article[] = [
       alt: 'Stefan Petrović, partner u Hefestos Capital-u',
       caption: 'Stefan Petrović, partner, Hefestos Capital',
     },
+    about: { slug: 'stefan-petrovic', name: 'Stefan Petrović', jobTitle: 'Partner' },
     body: [
       { kind: 'p', text: 'Hefestos Capital je u avgustu objavio svoj prvi polugodišnji pregled tržišta spajanja i preuzimanja u Jugoistočnoj Evropi, za period januar–jun 2026. Razgovarali smo sa Stefanom Petrovićem, partnerom, o tome šta to polugodište znači za vlasnika koji razmišlja o prodaji i čemu dve najveće transakcije u regionu uče kompaniju koja nikada neće biti na naslovnoj strani.' },
       { kind: 'h2', text: 'Pregled na samom početku odbija da proceni podatke koji nisu objavljeni. Zašto to naglašavate?' },

@@ -106,6 +106,13 @@ export function articleSchema(input: {
   image?: string;
   /** Caption for the cover image, if it has one. */
   imageCaption?: string;
+  /**
+   * The person the article is about — an interview subject. Emitted as a
+   * Person carrying the cover photograph, under the same `@id` as that
+   * person's entry on the team page, so the two portraits resolve to one
+   * individual instead of two namesakes.
+   */
+  about?: { slug: string; name: string; jobTitle: string };
 }) {
   return {
     '@context': 'https://schema.org',
@@ -121,8 +128,24 @@ export function articleSchema(input: {
               contentUrl: absoluteUrl(input.image),
               url: absoluteUrl(input.image),
               ...(input.imageCaption ? { caption: input.imageCaption } : {}),
+              representativeOfPage: true,
+              ...(input.about
+                ? { about: { '@id': personId(input.about.slug) } }
+                : {}),
             },
           ],
+        }
+      : {}),
+    ...(input.about
+      ? {
+          about: {
+            '@type': 'Person',
+            '@id': personId(input.about.slug),
+            name: input.about.name,
+            jobTitle: input.about.jobTitle,
+            ...(input.image ? { image: absoluteUrl(input.image) } : {}),
+            worksFor: { '@type': 'Organization', name: site.name, url: site.url },
+          },
         }
       : {}),
     datePublished: input.datePublished,
@@ -138,6 +161,18 @@ export function articleSchema(input: {
 }
 
 /**
+ * Stable entity id for a person, used everywhere that person is referenced.
+ *
+ * Without a shared `@id`, the portrait on the team page and the portrait on an
+ * interview describe two people who happen to have the same name. Anchored on
+ * the English team page in both locales, because the id identifies the person
+ * rather than the page they appear on.
+ */
+export function personId(slug: string): string {
+  return `${absoluteUrl('/en/management/')}#${slug}`;
+}
+
+/**
  * Person entries for the team page — one per named individual, each with the
  * portrait as `image`.
  *
@@ -147,13 +182,14 @@ export function articleSchema(input: {
  * rather than as decoration on a page that happens to mention them.
  */
 export function personSchema(input: {
-  people: { name: string; role: string; photo?: string; bio: string[] }[];
+  people: { slug: string; name: string; role: string; photo?: string; bio: string[] }[];
   /** Locale-prefixed path of the page the people appear on. */
   path: string;
 }) {
   return input.people.map((p) => ({
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': personId(p.slug),
     name: p.name,
     jobTitle: p.role,
     description: p.bio[0],
