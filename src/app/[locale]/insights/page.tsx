@@ -61,19 +61,33 @@ export default function InsightsPage({ params }: { params: { locale: string } })
               <Reveal key={a.slug} delay={i * 60} className="bg-bone">
                 <Link
                   href={`${href(locale, NAV_PATHS.insights)}${a.slug}/`}
-                  className="group flex h-full flex-col p-8 transition-colors hover:bg-bone-200/60"
+                  className="group flex h-full flex-col transition-colors hover:bg-bone-200/60"
                 >
-                  <time className="text-xs font-sans uppercase tracking-[0.16em] text-ink/45" dateTime={a.date}>
-                    {new Date(a.date).toLocaleDateString(isSr ? 'sr-RS' : 'en-GB', {
-                      year: 'numeric',
-                      month: 'long',
-                    })}
-                  </time>
-                  <h2 className="mt-4 font-serif text-xl leading-snug text-ink group-hover:text-maroon">
-                    {a.title}
-                  </h2>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-ink/65">{a.description}</p>
-                  <span className="mt-5 text-sm font-sans text-maroon">{t.common.readMore} →</span>
+                  {a.cover ? (
+                    <div className="aspect-[3/2] overflow-hidden bg-bone-200/50">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={a.cover.src}
+                        alt={a.cover.alt}
+                        className="h-full w-full object-cover transition-transform duration-700 ease-luxe group-hover:scale-[1.04] motion-reduce:transition-none"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  ) : null}
+                  <div className="flex flex-1 flex-col p-8">
+                    <time className="text-xs font-sans uppercase tracking-[0.16em] text-ink/45" dateTime={a.date}>
+                      {new Date(a.date).toLocaleDateString(isSr ? 'sr-RS' : 'en-GB', {
+                        year: 'numeric',
+                        month: 'long',
+                      })}
+                    </time>
+                    <h2 className="mt-4 font-serif text-xl leading-snug text-ink group-hover:text-maroon">
+                      {a.title}
+                    </h2>
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-ink/65">{a.description}</p>
+                    <span className="mt-5 text-sm font-sans text-maroon">{t.common.readMore} →</span>
+                  </div>
                 </Link>
               </Reveal>
             ))}

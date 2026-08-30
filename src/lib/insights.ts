@@ -21,8 +21,18 @@ export type Article = {
   description: string;
   keywords: string[];
   /**
-   * Optional cover photograph, shown above the article body and used as the
-   * Open Graph card image. Swap the file in /public/images to change it.
+   * Cover photograph. Give every new article one — it is the thumbnail on the
+   * Insights index and the Open Graph card when the article is shared.
+   *
+   * Put the file in /public/images/insights, cropped to 3:2 at 1600px wide so
+   * the index grid stays even. Abstract architectural imagery in the muted
+   * house palette, matching the existing set.
+   *
+   * `alt` is empty for decorative imagery — the card already carries the title
+   * as text, and repeating it only adds noise for a screen reader. Set a real
+   * alt, and a `caption`, when the photograph carries meaning of its own: a
+   * portrait of a named person, for instance. A caption also renders the image
+   * as a figure at the top of the article body.
    */
   cover?: { src: string; alt: string; caption?: string };
   /**
@@ -48,6 +58,7 @@ const en: Article[] = [
       'sell-side advisory',
       'business sale',
     ],
+    cover: { src: '/images/insights/sell-company.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'Selling a company is one of the most significant financial events in an owner’s life. Done well, a structured sale process maximises value, protects confidentiality and gets the transaction across the line on the best available terms. Done poorly, it can destroy value and consume years. This guide sets out the core stages of a professionally-run sell-side process.' },
       { kind: 'h2', text: '1. Preparation and positioning' },
@@ -81,6 +92,7 @@ const en: Article[] = [
       'sell-side',
       'buy-side',
     ],
+    cover: { src: '/images/insights/ma-advisor.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'An M&A advisor (or investment bank) guides companies, shareholders and investors through mergers, acquisitions, capital raises and other strategic transactions. Their role is part strategist, part project manager and part negotiator — and a good one earns their fee many times over.' },
       { kind: 'h2', text: 'Core responsibilities' },
@@ -112,6 +124,7 @@ const en: Article[] = [
       'EBITDA multiple',
       'company valuation methods',
     ],
+    cover: { src: '/images/insights/valuation.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'Valuation is both an art and a science. There is no single "correct" number — instead, experienced advisers use several methods together to establish a defensible range and understand what drives value up or down.' },
       { kind: 'h2', text: 'Comparable company analysis' },
@@ -144,6 +157,7 @@ const en: Article[] = [
       'business readiness',
       'M&A preparation',
     ],
+    cover: { src: '/images/insights/prepare.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'Most owners think about the sale process — the buyers, the negotiation, the price. But the work that most reliably increases value happens earlier, in the six to twelve months before a company goes to market. Preparation is where value is created; the process is where it is captured.' },
       { kind: 'h2', text: 'Put the financials in order' },
@@ -174,6 +188,7 @@ const en: Article[] = [
       'data room',
       'deal process',
     ],
+    cover: { src: '/images/insights/due-diligence.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'Once a buyer has been selected, due diligence begins — the detailed examination of a business before a binding offer is confirmed. It is often the most intensive phase of a transaction, and the point at which many deals stall or lose value. Sellers who understand what buyers look for can prepare, and protect both price and timeline.' },
       { kind: 'h2', text: 'The main areas of review' },
@@ -199,6 +214,7 @@ const en: Article[] = [
     description:
       'Sell-side and buy-side advisory sit on opposite ends of a transaction. Understanding each clarifies what an adviser actually does for you.',
     keywords: ['sell-side', 'buy-side', 'M&A advisory', 'mergers and acquisitions', 'deal process'],
+    cover: { src: '/images/insights/sell-side-buy-side.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'In every acquisition there are two sides — a seller and a buyer — and an adviser typically represents one of them. The distinction between sell-side and buy-side work shapes the entire mandate: the objectives, the process, and how success is measured.' },
       { kind: 'h2', text: 'Sell-side advisory' },
@@ -216,6 +232,7 @@ const en: Article[] = [
     description:
       'From preparation to completion, a company sale typically takes six to twelve months — sometimes longer. Here is what drives the timeline.',
     keywords: ['how long to sell a business', 'M&A timeline', 'company sale process', 'selling a company'],
+    cover: { src: '/images/insights/timeline.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'One of the first questions owners ask is how long a sale will take. The honest answer is that it depends — but most well-run processes run from six to twelve months from the decision to sell through to completion, with preparation sometimes beginning much earlier.' },
       { kind: 'h2', text: 'Preparation: 1–3 months (or more)' },
@@ -235,6 +252,7 @@ const en: Article[] = [
     description:
       'When buyer and seller disagree on value, an earn-out can bridge the gap — tying part of the price to future performance. Here is how they work.',
     keywords: ['earn-out', 'deferred consideration', 'valuation gap', 'M&A structuring', 'sale agreement'],
+    cover: { src: '/images/insights/earn-outs.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'Buyers and sellers often disagree on value: the seller is confident about the future, the buyer is cautious. An earn-out is a common way to bridge that gap — a portion of the purchase price is deferred and paid only if the business hits agreed targets after completion.' },
       { kind: 'h2', text: 'How an earn-out works' },
@@ -257,6 +275,7 @@ const en: Article[] = [
     description:
       'Growing companies can raise equity, debt, or a mix of both. Each has a cost and a consequence. Here is how to think about the choice.',
     keywords: ['growth capital', 'equity vs debt', 'raising capital', 'company financing', 'capital structure'],
+    cover: { src: '/images/insights/growth-capital.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'When a company needs capital to grow, acquire or expand, it broadly has two options: raise equity by bringing in investors, or raise debt by borrowing. Most companies use a mix. The right balance depends on the business, its stage and its appetite for risk.' },
       { kind: 'h2', text: 'Equity' },
@@ -274,6 +293,7 @@ const en: Article[] = [
     description:
       'The right adviser can add far more value than their fee. Here is what to look for when choosing who to trust with a transaction.',
     keywords: ['choose an M&A advisor', 'investment bank selection', 'corporate finance advisor', 'sell a business'],
+    cover: { src: '/images/insights/choose-advisor.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'A transaction is one of the most significant events in a company’s life, and the choice of adviser shapes the outcome. The right one earns their fee many times over; the wrong one can cost value and time. Here is what matters.' },
       { kind: 'h2', text: 'Relevant experience' },
@@ -299,6 +319,7 @@ const en: Article[] = [
       'Addiko RBI NLB',
       'M&A market review 2026',
     ],
+    cover: { src: '/images/insights/market-review.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'This is the first Half-Year Market Review from Hefestos Capital, covering mergers and acquisitions in Southeast Europe — with a focus on Serbia — for January to June 2026. It was a half-year in which the two largest domestic transactions were announced, contested, extended, and, by period-end, still not closed.' },
       { kind: 'p', text: 'A note on data: aggregate figures on the number and value of transactions in Central and Southeast Europe for the first half of 2026 had not been published at the time of writing. We could fill that gap with an estimate. We will not. Instead, this review relies on what has been published and is verifiable — official statistics, parties’ announcements, regulatory notices and stock-exchange filings. Where a number does not exist, we say so.' },
@@ -399,6 +420,7 @@ const en: Article[] = [
       'business exit',
       'succession planning',
     ],
+    cover: { src: '/images/insights/family-business.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'Family businesses are different. A sale is not only a transaction but the transition of something built over a lifetime, often across generations. The financial questions are the same as in any sale; the human ones are not — and they shape both the decision and the process.' },
       { kind: 'h2', text: 'Why a family business is different' },
@@ -432,6 +454,7 @@ const en: Article[] = [
       'retainer fee',
       'transaction costs',
     ],
+    cover: { src: '/images/insights/cost-of-sale.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'It is one of the first questions owners ask, and one of the last they get a straight answer to. The cost of selling a company is usually lower than owners fear and far less important than what a well-run process delivers — but it should be understood in full, and in writing, before any mandate is signed.' },
       { kind: 'h2', text: 'What you are actually paying for' },
@@ -470,6 +493,7 @@ const en: Article[] = [
       'selling a company in difficulty',
       'turnaround advisory',
     ],
+    cover: { src: '/images/insights/restructuring.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'Few owners call an adviser on a good day. By the time pressure is visible in the cash flow, the number of available options has already started to fall — and it keeps falling. Knowing what those options are, and the order in which they close, is often the difference between a restructuring that works and a forced sale at the bottom of the cycle.' },
       { kind: 'h2', text: 'The signs that options are narrowing' },
@@ -551,6 +575,7 @@ const en: Article[] = [
       'working capital adjustment',
       'selling a company',
     ],
+    cover: { src: '/images/insights/sale-agreement.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'Owners spend months on the number in the offer letter and a few weeks on the document that determines what they are actually paid. The gap between those two figures is rarely small, and it is created almost entirely in the sale and purchase agreement — in the price mechanism, the warranties and the money held back after completion. This is a guide to the mechanics, written for sellers rather than for lawyers.' },
       { kind: 'h2', text: 'From the offer to the amount you receive' },
@@ -608,6 +633,7 @@ const en: Article[] = [
       'acquisition financing',
       'company acquisition',
     ],
+    cover: { src: '/images/insights/buy-company.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'Most acquisitions begin the wrong way round. A broker sends a teaser, the numbers look reasonable, and a company that had no acquisition plan finds itself six weeks into a process it did not choose. A buy-side mandate reverses that sequence: decide what the acquisition has to achieve, then go looking for the company that achieves it. This guide covers the process from that decision through to the first year of ownership.' },
       { kind: 'h2', text: 'Start with the acquisition thesis' },
@@ -656,6 +682,7 @@ const sr: Article[] = [
       'prodaja preduzeća',
       'savetovanje pri prodaji',
     ],
+    cover: { src: '/images/insights/sell-company.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'Prodaja kompanije je jedan od najznačajnijih finansijskih događaja u životu vlasnika. Dobro vođen, strukturiran proces prodaje maksimizuje vrednost, štiti poverljivost i dovodi transakciju do cilja pod najboljim mogućim uslovima. Loše vođen, može uništiti vrednost i potrošiti godine. Ovaj vodič opisuje osnovne faze profesionalno vođenog procesa prodaje.' },
       { kind: 'h2', text: '1. Priprema i pozicioniranje' },
@@ -689,6 +716,7 @@ const sr: Article[] = [
       'prodaja kompanije',
       'akvizicija',
     ],
+    cover: { src: '/images/insights/ma-advisor.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'M&A savetnik (ili investiciona banka) vodi kompanije, akcionare i investitore kroz spajanja, akvizicije, prikupljanje kapitala i druge strateške transakcije. Njegova uloga je delom strateg, delom vođa projekta, a delom pregovarač — i dobar savetnik višestruko opravda svoju naknadu.' },
       { kind: 'h2', text: 'Osnovne odgovornosti' },
@@ -720,6 +748,7 @@ const sr: Article[] = [
       'EBITDA multiplikator',
       'metode procene vrednosti',
     ],
+    cover: { src: '/images/insights/valuation.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'Procena vrednosti je i umetnost i nauka. Ne postoji jedan „tačan" broj — umesto toga, iskusni savetnici kombinuju nekoliko metoda kako bi utvrdili branjiv raspon i razumeli šta podiže ili spušta vrednost.' },
       { kind: 'h2', text: 'Analiza uporedivih kompanija' },
@@ -752,6 +781,7 @@ const sr: Article[] = [
       'spremnost za prodaju',
       'M&A priprema',
     ],
+    cover: { src: '/images/insights/prepare.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'Većina vlasnika razmišlja o samom procesu prodaje — o kupcima, pregovorima i ceni. Međutim, posao koji najpouzdanije podiže vrednost odvija se ranije, šest do dvanaest meseci pre izlaska na tržište. Vrednost se stvara u pripremi, a u procesu se samo realizuje.' },
       { kind: 'h2', text: 'Uredite finansije' },
@@ -782,6 +812,7 @@ const sr: Article[] = [
       'data room',
       'proces transakcije',
     ],
+    cover: { src: '/images/insights/due-diligence.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'Kada je kupac izabran, počinje dubinska analiza (due diligence) — detaljno ispitivanje poslovanja pre nego što se obavezujuća ponuda potvrdi. To je često najintenzivnija faza transakcije i trenutak u kome mnoge transakcije zastanu ili izgube na vrednosti. Prodavci koji razumeju šta kupci proveravaju mogu se pripremiti i zaštititi i cenu i rokove.' },
       { kind: 'h2', text: 'Glavne oblasti provere' },
@@ -807,6 +838,7 @@ const sr: Article[] = [
     description:
       'Savetovanje na strani prodavca i na strani kupca nalaze se na suprotnim krajevima transakcije. Razumevanje razlike pojašnjava šta savetnik zaista radi za vas.',
     keywords: ['sell-side', 'buy-side', 'M&A savetovanje', 'spajanja i akvizicije', 'proces transakcije'],
+    cover: { src: '/images/insights/sell-side-buy-side.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'U svakoj akviziciji postoje dve strane — prodavac i kupac — a savetnik po pravilu zastupa jednu od njih. Razlika između rada na strani prodavca (sell-side) i na strani kupca (buy-side) oblikuje ceo mandat: ciljeve, proces i način na koji se meri uspeh.' },
       { kind: 'h2', text: 'Savetovanje na strani prodavca' },
@@ -824,6 +856,7 @@ const sr: Article[] = [
     description:
       'Od pripreme do realizacije, prodaja kompanije obično traje od šest do dvanaest meseci — ponekad i duže. Evo šta određuje rokove.',
     keywords: ['koliko traje prodaja firme', 'M&A rokovi', 'proces prodaje kompanije', 'prodaja preduzeća'],
+    cover: { src: '/images/insights/timeline.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'Jedno od prvih pitanja koje vlasnici postave jeste koliko će prodaja trajati. Iskren odgovor je — zavisi, ali većina dobro vođenih procesa traje od šest do dvanaest meseci, od odluke o prodaji do realizacije, pri čemu priprema ponekad počinje mnogo ranije.' },
       { kind: 'h2', text: 'Priprema: 1–3 meseca (ili više)' },
@@ -843,6 +876,7 @@ const sr: Article[] = [
     description:
       'Kada se kupac i prodavac ne slažu oko vrednosti, earn-out može da premosti razliku — vezujući deo cene za buduće rezultate. Evo kako funkcioniše.',
     keywords: ['earn-out', 'odloženo plaćanje', 'razlika u proceni', 'M&A strukturiranje', 'ugovor o prodaji'],
+    cover: { src: '/images/insights/earn-outs.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'Kupci i prodavci se često ne slažu oko vrednosti: prodavac je siguran u budućnost, kupac je oprezan. Earn-out je čest način da se ta razlika premosti — deo kupoprodajne cene se odlaže i plaća samo ako poslovanje ostvari dogovorene ciljeve nakon realizacije.' },
       { kind: 'h2', text: 'Kako earn-out funkcioniše' },
@@ -865,6 +899,7 @@ const sr: Article[] = [
     description:
       'Kompanije u rastu mogu da prikupe vlasnički, dužnički ili kombinovani kapital. Svaki ima svoju cenu i posledicu. Evo kako razmišljati o izboru.',
     keywords: ['kapital za rast', 'vlasnički vs dužnički', 'prikupljanje kapitala', 'finansiranje kompanije', 'struktura kapitala'],
+    cover: { src: '/images/insights/growth-capital.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'Kada je kompaniji potreban kapital za rast, akviziciju ili ekspanziju, u osnovi ima dve opcije: prikupiti vlasnički kapital uvođenjem investitora ili prikupiti dužnički kapital zaduživanjem. Većina kompanija koristi kombinaciju. Prava ravnoteža zavisi od poslovanja, njegove faze i sklonosti riziku.' },
       { kind: 'h2', text: 'Vlasnički kapital' },
@@ -882,6 +917,7 @@ const sr: Article[] = [
     description:
       'Pravi savetnik može doneti daleko više vrednosti od svoje naknade. Evo na šta obratiti pažnju pri izboru onoga kome poveravate transakciju.',
     keywords: ['izbor M&A savetnika', 'izbor investicione banke', 'savetnik za korporativne finansije', 'prodaja firme'],
+    cover: { src: '/images/insights/choose-advisor.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'Transakcija je jedan od najznačajnijih događaja u životu kompanije, a izbor savetnika oblikuje ishod. Pravi višestruko opravda svoju naknadu; pogrešan može da vas košta vrednosti i vremena. Evo šta je bitno.' },
       { kind: 'h2', text: 'Relevantno iskustvo' },
@@ -907,6 +943,7 @@ const sr: Article[] = [
       'Addiko RBI NLB',
       'pregled tržišta 2026',
     ],
+    cover: { src: '/images/insights/market-review.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'Ovo je prvi polugodišnji pregled tržišta Hefestos Capital-a, o spajanjima i preuzimanjima u Jugoistočnoj Evropi — sa fokusom na Srbiju — za period januar–jun 2026. Bilo je to polugodište u kome su dve najveće domaće transakcije bile objavljene, osporene, produžavane i, na kraju polugodišta, i dalje nezatvorene.' },
       { kind: 'p', text: 'Napomena o podacima: zbirni podaci o broju i vrednosti transakcija u Centralnoj i Jugoistočnoj Evropi za prvu polovinu 2026. u trenutku pisanja nisu objavljeni. Tu prazninu mogli bismo da popunimo procenom. Nećemo. Umesto toga, ovaj pregled se oslanja na ono što jeste objavljeno i proverljivo: zvaničnu statistiku, saopštenja učesnika transakcija, regulatorna obaveštenja i berzanske objave. Tamo gde broja nema, tako i piše.' },
@@ -1007,6 +1044,7 @@ const sr: Article[] = [
       'izlazak iz vlasništva',
       'planiranje nasleđivanja',
     ],
+    cover: { src: '/images/insights/family-business.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'Porodične firme su drugačije. Prodaja nije samo transakcija, već tranzicija nečega što je građeno čitavog života, često kroz generacije. Finansijska pitanja ista su kao u svakoj prodaji; ljudska nisu — a upravo ona oblikuju i odluku i sam proces.' },
       { kind: 'h2', text: 'Zašto je porodična firma drugačija' },
@@ -1040,6 +1078,7 @@ const sr: Article[] = [
       'retainer',
       'troškovi transakcije',
     ],
+    cover: { src: '/images/insights/cost-of-sale.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'To je jedno od prvih pitanja koje vlasnici postave, a jedno od poslednjih na koje dobiju jasan odgovor. Trošak prodaje kompanije po pravilu je manji nego što vlasnici očekuju i mnogo manje bitan od onoga što dobro vođen proces donosi — ali treba da bude u potpunosti razjašnjen, i to pisano, pre nego što se potpiše bilo kakav mandat.' },
       { kind: 'h2', text: 'Šta se zapravo plaća' },
@@ -1078,6 +1117,7 @@ const sr: Article[] = [
       'reprogram duga',
       'unapred pripremljen plan reorganizacije',
     ],
+    cover: { src: '/images/insights/restructuring.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'Malo vlasnika pozove savetnika na dobar dan. U trenutku kada se pritisak vidi u novčanom toku, broj raspoloživih opcija već je počeo da se smanjuje — i nastavlja da se smanjuje. Razumevanje koje su to opcije i kojim redom se zatvaraju često pravi razliku između restrukturiranja koje uspe i prinudne prodaje na dnu ciklusa.' },
       { kind: 'h2', text: 'Znaci da se prostor za manevar sužava' },
@@ -1159,6 +1199,7 @@ const sr: Article[] = [
       'locked box',
       'prodaja kompanije',
     ],
+    cover: { src: '/images/insights/sale-agreement.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'Vlasnici mesecima razgovaraju o iznosu iz ponude, a nekoliko nedelja o dokumentu koji određuje koliko će im zaista biti isplaćeno. Razlika između te dve cifre retko je mala, a nastaje gotovo u celosti u ugovoru o kupoprodaji udela — u mehanizmu cene, garancijama prodavca i novcu koji se zadržava nakon zatvaranja. Ovo je vodič kroz tu mehaniku, pisan za prodavce, a ne za pravnike.' },
       { kind: 'h2', text: 'Od ponude do iznosa koji dobijate' },
@@ -1216,6 +1257,7 @@ const sr: Article[] = [
       'akvizaciono finansiranje',
       'preuzimanje firme',
     ],
+    cover: { src: '/images/insights/buy-company.jpg', alt: '' },
     body: [
       { kind: 'p', text: 'Većina akvizicija počinje obrnutim redosledom. Posrednik pošalje kratak profil, brojke deluju razumno, i kompanija koja nije imala nikakav plan kupovine nađe se šest nedelja duboko u procesu koji nije birala. Mandat sa kupovne strane taj redosled okreće: prvo se odluči šta akvizicija treba da postigne, pa se onda traži kompanija koja to postiže. Ovaj vodič prati proces od te odluke do prve godine vlasništva.' },
       { kind: 'h2', text: 'Počnite od akvizacione teze' },
