@@ -96,7 +96,7 @@ export default function ArticlePage({ params }: { params: { locale: string; slug
                 <img
                   src={bodyFigure.src}
                   alt={bodyFigure.alt}
-                  className="aspect-[4/3] w-full bg-bone-200/50 object-cover object-top"
+                  className="aspect-[3/2] w-full bg-bone-200/50 object-cover"
                   loading="eager"
                   decoding="async"
                 />

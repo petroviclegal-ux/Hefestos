@@ -24,9 +24,11 @@ export type Article = {
    * Cover photograph. Give every new article one — it is the thumbnail on the
    * Insights index and the Open Graph card when the article is shared.
    *
-   * Put the file in /public/images/insights, cropped to 3:2 at 1600px wide so
-   * the index grid stays even. Abstract architectural imagery in the muted
-   * house palette, matching the existing set.
+   * Put the file in /public/images/insights, cropped to 3:2 at 1200x800 —
+   * even across the index grid, and the width Open Graph wants. Abstract
+   * architectural imagery in the muted house palette, matching the existing
+   * set. Next.js image optimisation is off under static export, so the file
+   * is served as-is: keep it near 100 KB.
    *
    * `alt` is empty for decorative imagery — the card already carries the title
    * as text, and repeating it only adds noise for a screen reader. Set a real
