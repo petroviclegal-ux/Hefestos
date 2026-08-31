@@ -738,15 +738,16 @@ const sr: Article[] = [
   {
     slug: 'how-to-sell-a-company',
     date: '2026-01-15',
-    title: 'Kako prodati kompaniju: proces M&A objašnjen',
+    title: 'Kako prodati firmu: procedura i tok procesa',
     description:
       'Vodič korak po korak kroz prodaju kompanije — od pripreme i procene vrednosti do vođenja konkurentnog procesa i zatvaranja transakcije.',
     keywords: [
-      'kako prodati kompaniju',
+      'kako prodati firmu',
       'prodaja firme',
-      'M&A proces',
-      'prodaja preduzeća',
-      'savetovanje pri prodaji',
+      'prodaja firme doo',
+      'prodaja firme procedura',
+      'prodaja firme u Srbiji',
+      'spajanja i preuzimanja',
     ],
     cover: { src: '/images/insights/sell-company.jpg', alt: '' },
     body: [
@@ -772,15 +773,15 @@ const sr: Article[] = [
   {
     slug: 'what-does-an-ma-advisor-do',
     date: '2026-02-10',
-    title: 'Šta radi M&A savetnik — i kada ga angažovati?',
+    title: 'Šta radi M&A savetnik i kada ga angažovati',
     description:
       'M&A savetnici vode kompanije kroz spajanja, akvizicije i prikupljanje kapitala. Evo šta rade i kada se njihov angažman isplati.',
     keywords: [
       'M&A savetnik',
-      'investiciona banka',
-      'savetnik za korporativne finansije',
-      'prodaja kompanije',
-      'akvizicija',
+      'savetnik za prodaju firme',
+      'spajanja i preuzimanja',
+      'prodaja firme',
+      'posrednik u prodaji firme',
     ],
     cover: { src: '/images/insights/ma-advisor.jpg', alt: '' },
     body: [
@@ -804,15 +805,15 @@ const sr: Article[] = [
   {
     slug: 'how-to-value-a-business',
     date: '2026-03-05',
-    title: 'Kako proceniti vrednost kompanije: metode koje su bitne',
+    title: 'Procena vrednosti firme: metode i šta utiče na cenu',
     description:
       'Glavne metode procene vrednosti kompanije — uporedivi multiplikatori, prethodne transakcije i diskontovani novčani tok — i kako funkcionišu zajedno.',
     keywords: [
-      'procena vrednosti kompanije',
-      'kako proceniti firmu',
-      'DCF',
-      'EBITDA multiplikator',
-      'metode procene vrednosti',
+      'procena vrednosti firme',
+      'procena vrednosti preduzeća',
+      'procena vrednosti firme cena',
+      'koliko vredi firma',
+      'vrednovanje firme',
     ],
     cover: { src: '/images/insights/valuation.jpg', alt: '' },
     body: [
@@ -837,15 +838,15 @@ const sr: Article[] = [
   {
     slug: 'prepare-company-for-sale',
     date: '2026-04-02',
-    title: 'Kako pripremiti kompaniju za prodaju',
+    title: 'Kako pripremiti firmu za prodaju',
     description:
       'Priprema koja prethodi izlasku na tržište često određuje konačnu cenu. Šta treba urediti na vreme i kada početi.',
     keywords: [
-      'priprema kompanije za prodaju',
-      'prodaja firme',
-      'planiranje izlaska',
-      'spremnost za prodaju',
-      'M&A priprema',
+      'priprema firme za prodaju',
+      'kako prodati firmu',
+      'prodaja firme doo',
+      'prodaja firme procedura',
+      'prodaja firme u Srbiji',
     ],
     cover: { src: '/images/insights/prepare.jpg', alt: '' },
     body: [
@@ -868,15 +869,15 @@ const sr: Article[] = [
   {
     slug: 'due-diligence-what-buyers-look-for',
     date: '2026-05-06',
-    title: 'Dubinska analiza: šta kupci proveravaju',
+    title: 'Dubinska analiza (due diligence): šta kupci proveravaju',
     description:
       'Dubinska analiza može da odluči sudbinu transakcije. Razumevanje onoga što kupci ispituju — i priprema za to — štiti i vrednost i rokove.',
     keywords: [
-      'dubinska analiza',
       'due diligence',
-      'prodaja kompanije',
-      'data room',
-      'proces transakcije',
+      'due diligence na srpskom',
+      'dubinska analiza firme',
+      'provera firme pre kupovine',
+      'prodaja firme',
     ],
     cover: { src: '/images/insights/due-diligence.jpg', alt: '' },
     body: [
@@ -900,7 +901,7 @@ const sr: Article[] = [
   {
     slug: 'sell-side-vs-buy-side',
     date: '2026-05-20',
-    title: 'Prodaja i kupovina u M&A: u čemu je razlika?',
+    title: 'Prodaja ili kupovina firme: razlika u ulozi savetnika',
     description:
       'Savetovanje na strani prodavca i na strani kupca nalaze se na suprotnim krajevima transakcije. Razumevanje razlike pojašnjava šta savetnik zaista radi za vas.',
     keywords: ['sell-side', 'buy-side', 'M&A savetovanje', 'spajanja i akvizicije', 'proces transakcije'],
@@ -918,7 +919,7 @@ const sr: Article[] = [
   {
     slug: 'how-long-to-sell-a-company',
     date: '2026-06-10',
-    title: 'Koliko traje prodaja kompanije?',
+    title: 'Koliko traje prodaja firme',
     description:
       'Od pripreme do realizacije, prodaja kompanije obično traje od šest do dvanaest meseci — ponekad i duže. Evo šta određuje rokove.',
     keywords: ['koliko traje prodaja firme', 'M&A rokovi', 'proces prodaje kompanije', 'prodaja preduzeća'],
@@ -938,7 +939,7 @@ const sr: Article[] = [
   {
     slug: 'earn-outs-explained',
     date: '2026-06-24',
-    title: 'Earn-out klauzule: kako premostiti razliku u proceni',
+    title: 'Earn-out klauzule: kako premostiti razliku u ceni',
     description:
       'Kada se kupac i prodavac ne slažu oko vrednosti, earn-out može da premosti razliku — vezujući deo cene za buduće rezultate. Evo kako funkcioniše.',
     keywords: ['earn-out', 'odloženo plaćanje', 'razlika u proceni', 'M&A strukturiranje', 'ugovor o prodaji'],
@@ -961,9 +962,9 @@ const sr: Article[] = [
   {
     slug: 'growth-capital-equity-vs-debt',
     date: '2026-07-08',
-    title: 'Finansiranje rasta: vlasnički ili dužnički kapital?',
+    title: 'Finansiranje rasta: dokapitalizacija ili kredit',
     description:
-      'Kompanije u rastu mogu da prikupe vlasnički, dužnički ili kombinovani kapital. Svaki ima svoju cenu i posledicu. Evo kako razmišljati o izboru.',
+      'Dokapitalizacija, bankarski kredit ili kombinacija. Šta svaki izvor finansiranja košta, šta traži zauzvrat i kako izabrati prema novčanom toku firme.',
     keywords: ['kapital za rast', 'vlasnički vs dužnički', 'prikupljanje kapitala', 'finansiranje kompanije', 'struktura kapitala'],
     cover: { src: '/images/insights/growth-capital.jpg', alt: '' },
     body: [
@@ -979,7 +980,7 @@ const sr: Article[] = [
   {
     slug: 'how-to-choose-an-ma-advisor',
     date: '2026-07-22',
-    title: 'Kako izabrati M&A savetnika',
+    title: 'Kako izabrati savetnika za prodaju firme',
     description:
       'Pravi savetnik može doneti daleko više vrednosti od svoje naknade. Evo na šta obratiti pažnju pri izboru onoga kome poveravate transakciju.',
     keywords: ['izbor M&A savetnika', 'izbor investicione banke', 'savetnik za korporativne finansije', 'prodaja firme'],
@@ -999,12 +1000,12 @@ const sr: Article[] = [
   {
     slug: 'ma-market-review-h1-2026',
     date: '2026-08-03',
-    title: 'Pregled tržišta M&A — prva polovina 2026: Jugoistočna Evropa i Srbija',
+    title: 'Pregled tržišta M&A u prvoj polovini 2026: Jugoistočna Evropa i Srbija',
     description:
       'Polugodišnji pregled tržišta spajanja i preuzimanja u Jugoistočnoj Evropi, sa fokusom na Srbiju: slučajevi NIS i Addiko, makroekonomski okvir i četiri pouke za vlasnike.',
     keywords: [
+      'spajanja i preuzimanja Srbija',
       'M&A Srbija',
-      'spajanja i preuzimanja Jugoistočna Evropa',
       'NIS MOL',
       'Addiko RBI NLB',
       'pregled tržišta 2026',
@@ -1100,14 +1101,14 @@ const sr: Article[] = [
   {
     slug: 'selling-a-family-business',
     date: '2026-08-18',
-    title: 'Prodaja porodične firme: nasleđe i tranzicija',
+    title: 'Prodaja porodične firme: nasleđivanje i tranzicija',
     description:
       'Prodaja porodične firme nije samo transakcija, već i tranzicija. Evo kako uskladiti vrednost i nasleđe — i pripremiti se za oboje.',
     keywords: [
       'prodaja porodične firme',
-      'nasleđivanje porodičnog biznisa',
-      'tranzicija porodične firme',
-      'izlazak iz vlasništva',
+      'nasleđivanje firme',
+      'prodaja firme doo',
+      'porodični biznis',
       'planiranje nasleđivanja',
     ],
     cover: { src: '/images/insights/family-business.jpg', alt: '' },
@@ -1134,15 +1135,15 @@ const sr: Article[] = [
   {
     slug: 'how-much-does-it-cost-to-sell-a-company',
     date: '2026-08-18',
-    title: 'Koliko košta prodaja firme? Naknade u M&A procesu',
+    title: 'Koliko košta prodaja firme: naknade savetnika i ostali troškovi',
     description:
       'Retainer, uspešnica, pravni troškovi i due diligence — koliko zaista košta prodaja kompanije i kako strukturirati naknade da interesi budu usklađeni.',
     keywords: [
       'koliko košta prodaja firme',
+      'prodaja doo firme cena',
+      'procena vrednosti firme cena',
       'naknade M&A savetnika',
-      'uspešnica',
-      'retainer',
-      'troškovi transakcije',
+      'troškovi prodaje firme',
     ],
     cover: { src: '/images/insights/cost-of-sale.jpg', alt: '' },
     body: [
@@ -1172,16 +1173,16 @@ const sr: Article[] = [
   {
     slug: 'restructuring-or-selling-a-company-under-pressure',
     date: '2026-08-24',
-    title: 'Restrukturiranje ili prodaja: opcije kada je kompanija pod pritiskom',
+    title: 'Firma u blokadi ili dugovima: restrukturiranje ili prodaja',
     description:
-      'Refinansiranje, dokapitalizacija, delimična ili potpuna prodaja — realne opcije za kompaniju pod finansijskim pritiskom i zašto rana reakcija čuva vrednost.',
+      'Firma u blokadi ili sa dugovima ima više izlaza od stečaja. Refinansiranje, dokapitalizacija, delimična i potpuna prodaja, i zašto rana reakcija čuva vrednost.',
     keywords: [
-      'restrukturiranje kompanije',
-      'finansijsko restrukturiranje',
-      'prodaja firme u problemima',
-      'refinansiranje duga',
-      'reprogram duga',
-      'unapred pripremljen plan reorganizacije',
+      'prodaja firme u blokadi',
+      'prodaja firme u dugovima',
+      'firma u blokadi šta dalje',
+      'restrukturiranje firme',
+      'restrukturiranje kredita pravnog lica',
+      'izlazak iz blokade',
     ],
     cover: { src: '/images/insights/restructuring.jpg', alt: '' },
     body: [
@@ -1254,16 +1255,16 @@ const sr: Article[] = [
   {
     slug: 'sale-agreement-warranties-escrow-price-adjustments',
     date: '2026-08-28',
-    title: 'Ugovor o kupoprodaji udela: garancije, escrow i korekcija cene',
+    title: 'Ugovor o prodaji udela u doo: garancije, escrow i korekcija cene',
     description:
       'Cena iz ponude dogovara se rano; ono što stigne na račun prodavca određuje se u ugovoru. Vodič kroz most cene, obrtni kapital, garancije prodavca i escrow.',
     keywords: [
-      'ugovor o kupoprodaji udela',
+      'ugovor o prodaji udela',
+      'ugovor o prodaji udela doo',
+      'prodaja udela u doo',
       'garancije prodavca',
       'escrow',
-      'korekcija cene obrtni kapital',
-      'locked box',
-      'prodaja kompanije',
+      'korekcija cene',
     ],
     cover: { src: '/images/insights/sale-agreement.jpg', alt: '' },
     body: [
@@ -1312,16 +1313,16 @@ const sr: Article[] = [
   {
     slug: 'how-to-buy-a-company-acquisition-process',
     date: '2026-08-30',
-    title: 'Kako kupiti kompaniju: disciplinovan proces akvizicije',
+    title: 'Kako kupiti firmu: proces akvizicije',
     description:
       'M&A sa kupovne strane — akvizaciona teza, pristup kompanijama koje nisu na prodaju, dubinska analiza koja se isplati i disciplina u ceni.',
     keywords: [
       'kako kupiti firmu',
-      'akvizicija kompanije',
-      'buy-side savetovanje',
-      'kupovina kompanije',
-      'akvizaciono finansiranje',
-      'preuzimanje firme',
+      'kako kupiti firmu u Srbiji',
+      'kupovina firme',
+      'kupovina firme doo',
+      'akvizicija firme',
+      'kupovina udela u doo',
     ],
     cover: { src: '/images/insights/buy-company.jpg', alt: '' },
     body: [
@@ -1364,11 +1365,10 @@ const sr: Article[] = [
       'O čemu korporativne finansije zapravo odlučuju — ulaganja, izvori finansiranja i prinos vlasnicima — i povodi zbog kojih privatna firma poziva savetnika.',
     keywords: [
       'korporativne finansije',
-      'savetovanje u korporativnim finansijama',
-      'investiciono bankarstvo Srbija',
+      'savetovanje pri prodaji firme',
+      'dokapitalizacija firme',
       'struktura kapitala',
-      'prikupljanje kapitala',
-      'procena vrednosti kompanije',
+      'procena vrednosti firme',
     ],
     cover: { src: '/images/insights/corporate-finance.jpg', alt: '' },
     body: [

@@ -173,18 +173,62 @@ upravljanje, raspodela dobiti, izlazak i šta se dešava kada se partneri ne slo
 Set pokazatelja koji vlasniku govori nešto pre nego što se problem pojavi u
 bilansu. Zašto mesečni izveštaj koji kasni dvadeset dana nema upotrebnu vrednost.
 
-## 5. Redosled objavljivanja
+## 5. Šta ljudi u Srbiji zaista kucaju
 
-Prvih šest po tražnji i po tome koliko brzo otvaraju razgovor sa klijentom:
+Provereno kroz Google autocomplete za Srbiju (hl=sr, gl=rs), 31. avgusta 2026.
+Autocomplete pokazuje koje dopune Google smatra dovoljno čestim da ih ponudi.
+Ne daje mesečni volumen; za brojeve je potreban Ahrefs ili Keyword Planner.
 
-1. Porez pri prodaji firme (2.1)
-2. Reprogram i refinansiranje bankarskog duga (1.1)
+**Reč je „firma", ne „kompanija".** Sve što se traži vezuje se za „firmu":
+`prodaja firme`, `kako prodati firmu`, `kupovina firme`, `procena vrednosti
+firme`. Sajt je do 31. avgusta 2026. u naslovima koristio „kompanija", što je
+tačna ali retko kucana reč. Naslovi na srpskom su tog dana prepravljeni.
+
+**„doo" ide uz skoro sve.** `prodaja firme doo`, `prodaja udela u doo`,
+`prodaja doo firme cena`, `kupovina firme doo`, `dokapitalizacija doo`.
+
+**Nevolja se traži otvoreno.** `prodaja firme u blokadi`, `prodaja firme u
+dugovima`, `firma u blokadi šta dalje`, `izlazak iz blokade`, `kupovina firme u
+stečaju`. Ovo je Special Situations praksa, izrečena rečima kojima ljudi zaista
+pišu. Vredi više od termina „restrukturiranje", koji je u pretrazi vezan
+pretežno za reprogram kredita fizičkih lica.
+
+**Cena usluge se traži direktno.** `procena vrednosti firme cena`, `prodaja doo
+firme cena`, `koliki je porez na prodaju firme`.
+
+**Šta ne vredi ciljati.** `investiciono bankarstvo` vodi na posao, fakultet i
+banke, ne na klijente. `m&a` na srpskom tržištu vraća apartmane, auto-servise i
+transport; koristan je jedino oblik `spajanja i preuzimanja`. Bez ijedne dopune
+su ostali `vrednovanje firme`, `konsultant za firme`, `investitor za firmu` i
+`savetnik za prodaju firme`, pa na njima ne treba graditi naslove.
+
+**Sporedan nalaz.** `firme na prodaju` i `prodajem firmu` su jaki upiti, ali
+vode na oglasnike. Saobraćaj sa njih je mešovit i ne treba mu prilagođavati
+tekstove.
+
+## 6. Redosled objavljivanja
+
+Podešen prema gornjim nalazima:
+
+1. Porez pri prodaji firme (2.1), sa naglaskom na `prodaja udela u doo porez`
+2. Firma u blokadi: šta su opcije i kojim redom se zatvaraju (nova tema, vidi 6.1)
 3. Normalizovana EBITDA (2.5)
-4. Akvizaciono finansiranje (3.1)
-5. Ulazak manjinskog investitora (4.4)
-6. Trinaestonedeljna projekcija novčanog toka (1.3)
+4. Reprogram i refinansiranje duga (1.1), pisano za pravna lica i tako naslovljeno
+5. Akvizaciono finansiranje (3.1)
+6. Dokapitalizacija: kada, ko ulazi i po kojoj ceni (nova tema, vidi 6.2)
 
 Zatim tekstovi koji traže pravnu proveru (1.2, 1.5, 3.2), pa ostatak.
+
+**6.1 Firma u blokadi: šta su opcije i koliko traju**
+`firma u blokadi šta dalje`, `prodaja firme u blokadi`, `izlazak iz blokade`
+Postojeći tekst o restrukturiranju pokriva okvir, ali ne odgovara na pitanje
+onako kako je postavljeno. Zaseban tekst: šta blokada praktično znači, koliko
+prostora ostaje, i zašto se vrednost gubi po nedeljama.
+
+**6.2 Dokapitalizacija firme**
+`dokapitalizacija firme`, `dokapitalizacija doo`, `investitor u firmu`
+Postupak, procena vrednosti pre i posle ulaganja, razvodnjavanje udela
+postojećih vlasnika i šta novi suvlasnik traži u ugovoru.
 
 Uz to ide i polugodišnji pregled tržišta za drugu polovinu 2026, u januaru ili
 februaru 2027. Prvi pregled je najčitaniji tekst te vrste na sajtu i vredi ga
