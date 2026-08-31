@@ -12,7 +12,13 @@ import { type Locale } from './site';
 export type Block =
   | { kind: 'p'; text: string }
   | { kind: 'h2'; text: string }
-  | { kind: 'ul'; items: string[] };
+  | { kind: 'ul'; items: string[] }
+  /**
+   * A list of internal links. `to` is a locale-neutral segment — 'services',
+   * or 'insights/how-to-sell-a-company' — and the locale prefix is added when
+   * the block is rendered, so the same data serves both languages.
+   */
+  | { kind: 'links'; items: { label: string; to: string }[] };
 
 export type Article = {
   slug: string;
@@ -668,6 +674,64 @@ const en: Article[] = [
       { kind: 'p', text: 'A buy-side adviser runs the search, manages the approach and the process, coordinates diligence and negotiates on the buyer’s behalf, which lets the management team continue running the business while it happens. If you are considering an acquisition, the most useful early conversation is about the thesis and the realistic target universe — before any specific company is on the table.' },
     ],
   },
+  {
+    slug: 'corporate-finance-advisory-explained',
+    date: '2026-08-31',
+    title: 'Corporate Finance Advisory: What It Covers and When to Use It',
+    description:
+      'What corporate finance actually decides — investment, funding and returns to owners — and the trigger events that make a private company reach for an adviser.',
+    keywords: [
+      'corporate finance',
+      'corporate finance advisory',
+      'investment banking Serbia',
+      'capital structure',
+      'raising capital',
+      'company valuation',
+    ],
+    cover: { src: '/images/insights/corporate-finance.jpg', alt: '' },
+    body: [
+      { kind: 'p', text: 'Corporate finance sounds like a department in a large company. It is better understood as a set of decisions that every business makes, whether or not anyone in it uses the term: what to put money into, where that money comes from, and what happens to the profit once it arrives. A company with two hundred employees and no finance director still makes all three decisions, usually implicitly, and usually without ever testing them against an alternative.' },
+      { kind: 'h2', text: 'The three questions' },
+      { kind: 'p', text: 'Everything in the discipline reduces to three questions, and they are worth stating plainly because most business decisions are one of them in disguise.' },
+      { kind: 'ul', items: [
+        'What do we invest in — a new line, a second facility, an acquisition, a market entry — and what return does it have to earn to be worth doing.',
+        'How do we fund it — retained profit, bank debt, new equity, a partner — and what does each of those cost, in money and in control.',
+        'What do we do with the surplus — reinvest, pay down debt, distribute to owners — and on what basis do we choose.',
+      ] },
+      { kind: 'p', text: 'A company answers these every year by default. The value of answering them deliberately is that the alternatives become visible: the second facility competes with the acquisition, the bank loan competes with the minority investor, and the comparison can be made before the money is committed rather than after.' },
+      { kind: 'h2', text: 'Valuation runs underneath all three' },
+      { kind: 'p', text: 'Each of the three questions rests on a view of what something is worth — the project, the target, the company itself. That is why valuation is the first piece of work in most corporate finance mandates, and why a defensible valuation range is more useful than a single number. The range shows which assumptions carry the weight, and those assumptions are usually where a negotiation is actually won or lost.' },
+      { kind: 'h2', text: 'Funding: equity, debt, and the ground between them' },
+      { kind: 'p', text: 'Debt is cheaper and it is repaid on a schedule that does not care how the year went. Equity costs more and shares the risk, but it dilutes ownership and brings a shareholder with expectations of their own. Between the two sit mezzanine capital, convertible instruments, vendor loans and minority investments with defined exit rights, and the practical work is matching the instrument to the cash the business actually produces rather than to the cash the plan projects.' },
+      { kind: 'h2', text: 'Buying and selling' },
+      { kind: 'p', text: 'Mergers and acquisitions are the visible part of corporate finance, and the part where process design has the largest effect on outcome. On a sale, the number of credible bidders sets the price more reliably than any valuation model. On an acquisition, the discipline is in defining what the deal has to achieve before a target is chosen, and in walking away when the price stops matching that.' },
+      { kind: 'h2', text: 'Capital structure and refinancing' },
+      { kind: 'p', text: 'A capital structure is a set of decisions taken years apart, often by different people, under conditions that no longer hold. Short-term facilities that were meant to be temporary get rolled indefinitely. Debt is held in one currency while revenue arrives in another. Maturities cluster in the same quarter. Reviewing the structure while the company is performing is inexpensive; reviewing it during a covenant discussion with a lender is not.' },
+      { kind: 'h2', text: 'When a private company actually calls someone' },
+      { kind: 'p', text: 'In practice, owners engage a corporate finance adviser at identifiable moments rather than as a matter of routine.' },
+      { kind: 'ul', items: [
+        'Succession is approaching and no member of the next generation intends to run the business.',
+        'An unsolicited approach arrives from a competitor or a fund, and there is no way to judge whether the number is serious.',
+        'An investment is too large for the balance sheet and the bank has said no, or said yes on terms that transfer the risk.',
+        'A shareholder wants out, and the remaining owners need a way to price and fund the exit.',
+        'Expansion into another market raises a build-or-buy question with no obvious answer.',
+        'A larger company proposes a partnership, and the governance terms matter more than the headline.',
+      ] },
+      { kind: 'p', text: 'What these share is that each carries a decision that is hard to reverse and difficult to price from inside the company. That is the point at which an outside view earns its cost, and it is also the point at which most owners have already spent months deciding informally.' },
+      { kind: 'h2', text: 'What an adviser adds' },
+      { kind: 'p', text: 'An adviser brings a defensible valuation, access to counterparties beyond the owner’s own network, a structured process that creates competition rather than reacting to a single interested party, and the negotiating distance to press on terms without damaging a relationship the owner has to live with afterwards. The practical benefit that owners mention most often afterwards is simpler: the management team kept running the business while the transaction was run by someone else.' },
+      { kind: 'h2', text: 'Where to go next' },
+      { kind: 'links', items: [
+        { label: 'Our corporate finance services', to: 'services' },
+        { label: 'Sectors we cover', to: 'sectors' },
+        { label: 'How to value a business', to: 'insights/how-to-value-a-business' },
+        { label: 'Financing growth: equity or debt?', to: 'insights/growth-capital-equity-vs-debt' },
+        { label: 'How to sell a company', to: 'insights/how-to-sell-a-company' },
+        { label: 'How to buy a company', to: 'insights/how-to-buy-a-company-acquisition-process' },
+      ] },
+      { kind: 'p', text: 'If one of the trigger events above is on your horizon, the useful conversation happens before the decision is taken rather than after. It costs nothing and it usually changes the range of options still available.' },
+    ],
+  },
 ];
 
 const sr: Article[] = [
@@ -1290,6 +1354,64 @@ const sr: Article[] = [
       { kind: 'h2', text: 'Godina posle zatvaranja' },
       { kind: 'p', text: 'Vrednost iz teze ostvaruje se nakon zatvaranja ili se ne ostvaruje uopšte. To znači pisani plan integracije pre potpisivanja, dogovorene aranžmane o zadržavanju ljudi od kojih posao zavisi, i jasnoću od prvog dana o tome šta se menja a šta ostaje. Pitanja korporativne kulture u firmama koje vodi vlasnik praktična su, a ne apstraktna: ko sada odobrava rabat, ko potpisuje zapošljavanje, koliko brzo se donose odluke u odnosu na ranije.' },
       { kind: 'p', text: 'Savetnik sa kupovne strane vodi pretragu, upravlja pristupom i procesom, koordinira dubinsku analizu i pregovara u ime kupca, čime menadžment tim nastavlja da vodi posao dok se to odvija. Ako razmišljate o akviziciji, najkorisniji rani razgovor je o tezi i realnom krugu ciljnih kompanija — pre nego što se ijedna konkretna firma nađe na stolu.' },
+    ],
+  },
+  {
+    slug: 'corporate-finance-advisory-explained',
+    date: '2026-08-31',
+    title: 'Korporativne finansije: šta obuhvataju i kada su vam potrebne',
+    description:
+      'O čemu korporativne finansije zapravo odlučuju — ulaganja, izvori finansiranja i prinos vlasnicima — i povodi zbog kojih privatna firma poziva savetnika.',
+    keywords: [
+      'korporativne finansije',
+      'savetovanje u korporativnim finansijama',
+      'investiciono bankarstvo Srbija',
+      'struktura kapitala',
+      'prikupljanje kapitala',
+      'procena vrednosti kompanije',
+    ],
+    cover: { src: '/images/insights/corporate-finance.jpg', alt: '' },
+    body: [
+      { kind: 'p', text: 'Korporativne finansije zvuče kao sektor u velikoj kompaniji. Bolje ih je razumeti kao skup odluka koje donosi svaka firma, bez obzira na to da li iko u njoj koristi taj izraz: u šta uložiti novac, odakle taj novac dolazi i šta se dešava sa dobiti kada se pojavi. Kompanija sa dvesta zaposlenih i bez finansijskog direktora i dalje donosi sve tri odluke, najčešće prećutno i najčešće bez ijednog poređenja sa alternativom.' },
+      { kind: 'h2', text: 'Tri pitanja' },
+      { kind: 'p', text: 'Sve u ovoj oblasti svodi se na tri pitanja, a vredi ih izreći otvoreno, jer je većina poslovnih odluka jedno od njih u prerušenom obliku.' },
+      { kind: 'ul', items: [
+        'U šta ulažemo — novu liniju, drugi pogon, akviziciju, izlazak na tržište — i koliki prinos to mora da donese da bi imalo smisla.',
+        'Iz čega to finansiramo — iz zadržane dobiti, bankarskog kredita, novog kapitala, ulaska partnera — i koliko svaka od tih opcija košta, u novcu i u kontroli.',
+        'Šta radimo sa viškom — reinvestiramo, otplaćujemo dug, isplaćujemo vlasnicima — i na osnovu čega biramo.',
+      ] },
+      { kind: 'p', text: 'Firma na ova pitanja odgovara svake godine, htela to ili ne. Vrednost svesnog odgovaranja je u tome što alternative postaju vidljive: drugi pogon se takmiči sa akvizicijom, bankarski kredit sa manjinskim investitorom, a poređenje se pravi pre nego što je novac vezan, a ne posle.' },
+      { kind: 'h2', text: 'Procena vrednosti stoji ispod sva tri pitanja' },
+      { kind: 'p', text: 'Svako od tri pitanja počiva na stavu o tome koliko nešto vredi — projekat, ciljna kompanija ili sama firma. Zato je procena vrednosti prvi posao u većini mandata, i zato je branjiv raspon vrednosti korisniji od jedne cifre. Raspon pokazuje koje pretpostavke nose najveću težinu, a upravo se na tim pretpostavkama pregovori dobijaju ili gube.' },
+      { kind: 'h2', text: 'Finansiranje: kapital, dug i prostor između' },
+      { kind: 'p', text: 'Dug je jeftiniji i otplaćuje se po planu koji ne mari kakva je godina bila. Vlasnički kapital košta više i deli rizik, ali razvodnjava vlasništvo i dovodi suvlasnika sa sopstvenim očekivanjima. Između to dvoje stoje mezanin kapital, konvertibilni instrumenti, pozajmice prodavca i manjinska ulaganja sa definisanim pravima izlaska, a praktičan posao je uskladiti instrument sa gotovinom koju posao stvarno stvara, a ne sa onom koju plan projektuje.' },
+      { kind: 'h2', text: 'Kupovina i prodaja' },
+      { kind: 'p', text: 'Spajanja i preuzimanja su vidljivi deo korporativnih finansija i deo u kome oblik procesa najviše utiče na ishod. Pri prodaji, broj ozbiljnih ponuđača određuje cenu pouzdanije od bilo kog modela procene. Pri kupovini, disciplina je u tome da se pre izbora mete definiše šta transakcija treba da postigne, i da se odustane kada cena prestane tome da odgovara.' },
+      { kind: 'h2', text: 'Struktura kapitala i refinansiranje' },
+      { kind: 'p', text: 'Struktura kapitala je skup odluka donetih godinama jedna od druge, često od strane različitih ljudi, pod okolnostima koje više ne važe. Kratkoročni krediti koji su trebali da budu privremeni obnavljaju se unedogled. Dug stoji u jednoj valuti, a prihod stiže u drugoj. Rokovi dospeća se gomilaju u istom kvartalu. Preispitivanje strukture dok kompanija dobro posluje jeftino je; preispitivanje tokom razgovora sa bankom o prekršenim kovenantima nije.' },
+      { kind: 'h2', text: 'Kada privatna firma zaista pozove nekoga' },
+      { kind: 'p', text: 'U praksi vlasnici angažuju savetnika u prepoznatljivim trenucima, a ne kao stvar rutine.' },
+      { kind: 'ul', items: [
+        'Bliži se nasleđivanje, a niko iz naredne generacije ne namerava da vodi posao.',
+        'Stiže nezatražena ponuda konkurenta ili fonda, a nema načina da se proceni da li je iznos ozbiljan.',
+        'Ulaganje je preveliko za bilans, a banka je rekla ne, ili je rekla da pod uslovima koji prebacuju rizik.',
+        'Suvlasnik želi da izađe, a preostali vlasnici treba da odrede cenu i obezbede sredstva za taj izlazak.',
+        'Širenje na drugo tržište otvara pitanje graditi ili kupiti, bez očiglednog odgovora.',
+        'Veća kompanija predlaže partnerstvo, a uslovi upravljanja znače više od glavnog iznosa.',
+      ] },
+      { kind: 'p', text: 'Zajedničko im je to što svaki nosi odluku koju je teško poništiti i teško proceniti iznutra. To je trenutak u kome pogled sa strane opravdava svoju cenu, a ujedno i trenutak u kome je većina vlasnika već mesecima odlučivala neformalno.' },
+      { kind: 'h2', text: 'Šta savetnik donosi' },
+      { kind: 'p', text: 'Savetnik donosi branjivu procenu vrednosti, pristup sagovornicima izvan vlasnikove mreže kontakata, uređen proces koji stvara konkurenciju umesto da reaguje na jednog zainteresovanog, i pregovaračku distancu koja omogućava pritisak na uslove bez štete po odnos sa kojim vlasnik posle mora da živi. Praktičnu korist koju vlasnici najčešće pominju posle jednostavnija je: menadžment je nastavio da vodi posao dok je transakciju vodio neko drugi.' },
+      { kind: 'h2', text: 'Gde dalje' },
+      { kind: 'links', items: [
+        { label: 'Naše usluge u korporativnim finansijama', to: 'services' },
+        { label: 'Sektori kojima se bavimo', to: 'sectors' },
+        { label: 'Kako proceniti vrednost kompanije', to: 'insights/how-to-value-a-business' },
+        { label: 'Finansiranje rasta: kapital ili dug?', to: 'insights/growth-capital-equity-vs-debt' },
+        { label: 'Kako prodati kompaniju', to: 'insights/how-to-sell-a-company' },
+        { label: 'Kako kupiti kompaniju', to: 'insights/how-to-buy-a-company-acquisition-process' },
+      ] },
+      { kind: 'p', text: 'Ako je neki od navedenih povoda pred vama, koristan razgovor se vodi pre nego što odluka bude doneta, a ne posle. Ne košta ništa i po pravilu menja opseg opcija koje su još uvek otvorene.' },
     ],
   },
 ];

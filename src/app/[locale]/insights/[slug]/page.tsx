@@ -36,13 +36,23 @@ export function generateMetadata({
   });
 }
 
-function renderBlock(block: Block, i: number) {
+function renderBlock(block: Block, i: number, locale: Locale) {
   if (block.kind === 'h2') return <h2 key={i}>{block.text}</h2>;
   if (block.kind === 'ul')
     return (
       <ul key={i}>
         {block.items.map((it, j) => (
           <li key={j}>{it}</li>
+        ))}
+      </ul>
+    );
+  if (block.kind === 'links')
+    return (
+      <ul key={i}>
+        {block.items.map((it, j) => (
+          <li key={j}>
+            <Link href={href(locale, it.to)}>{it.label}</Link>
+          </li>
         ))}
       </ul>
     );
@@ -106,7 +116,9 @@ export default function ArticlePage({ params }: { params: { locale: string; slug
               </figure>
             ) : null}
 
-            <div className="article-prose mt-6">{a.body.map(renderBlock)}</div>
+            <div className="article-prose mt-6">
+              {a.body.map((block, i) => renderBlock(block, i, locale))}
+            </div>
 
             <div className="mt-12 border-t border-ink/10 pt-8">
               <Link href={href(locale, NAV_PATHS.insights)} className="text-sm text-maroon hover:underline">
