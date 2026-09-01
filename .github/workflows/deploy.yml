@@ -1,40 +1,38 @@
-# Builds the site on GitHub Actions and ships the finished `out/` folder to
-# Netlify as a prebuilt deploy.
+# Builds the static export and publishes it to GitHub Pages.
 #
-# Netlify build minutes are only consumed when Netlify itself runs the build.
-# Deploying an already-built directory through the CLI does not touch them, and
-# GitHub Actions is free without a minute cap on public repositories.
+# Free without a minute cap on public repositories, so nothing is metered here.
 #
-# Before this works, two things have to be done by hand, once:
+# One-time setup in the repository, under Settings > Pages:
+#   Source          GitHub Actions
+#   Custom domain   hefcap.com
 #
-#   1. Add two repository secrets under Settings > Secrets and variables >
-#      Actions:
-#        NETLIFY_AUTH_TOKEN  a personal access token from Netlify, under
-#                            User settings > Applications > Personal access
-#                            tokens
-#        NETLIFY_SITE_ID     the site's API ID, under Site configuration >
-#                            General > Site details
+# The DNS records have to point at GitHub before the certificate can be issued;
+# see the apex A records and the www CNAME in README terms below.
 #
-#   2. Stop Netlify from building the same commit itself, otherwise both run
-#      and the minutes are spent anyway: Site configuration > Build & deploy >
-#      Continuous deployment > Build settings > Stop builds.
-#
-# netlify.toml stays where it is. The CLI reads it from the repository root, so
-# the cache headers for /_next/static and /images still apply.
+# Two files in /public matter to Pages and are copied into out/ by next build:
+#   CNAME       keeps the custom domain attached across deployments
+#   .nojekyll   stops Jekyll from discarding /_next, whose name starts with an
+#               underscore. Without it every stylesheet and script 404s.
 
-name: Build and deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deployment at a time; a newer push supersedes one still in flight.
 concurrency:
-  group: deploy-main
+  group: pages
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -48,12 +46,29 @@ jobs:
 
       - run: npm run build
 
-      # Fail loudly rather than deploying an empty site if the export changed.
-      - name: Check the export produced something
-        run: test -f out/index.html && test -d out/sr
+      # Belt and braces: the file is in /public, but a missing .nojekyll breaks
+      # the whole site in a way that is not obvious from the build log.
+      - run: touch out/.nojekyll
 
-      - name: Deploy to Netlify
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: npx --yes netlify-cli@17 deploy --dir=out --prod --message "GitHub Actions ${{ github.sha }}"
+      - name: Check the export produced something
+        run: |
+          test -f out/index.html
+          test -d out/sr
+          test -d out/en
+          test -f out/CNAME
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
