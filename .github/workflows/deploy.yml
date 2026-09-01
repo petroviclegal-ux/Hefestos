@@ -57,7 +57,11 @@ jobs:
           test -d out/en
           test -f out/CNAME
 
+      # enablement turns Pages on and sets the source to this workflow using the
+      # job's own token, so nobody has to flip it by hand in Settings > Pages.
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:
