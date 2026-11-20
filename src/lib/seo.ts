@@ -71,7 +71,10 @@ export function buildMetadata(input: PageSeoInput): Metadata {
         };
 
   return {
-    title: input.title,
+    // Articles compete on their own topic, so they carry no brand suffix: the
+    // template in the locale layout would otherwise spend 19 characters of the
+    // 60 Google displays. Section and company pages keep it.
+    title: input.type === 'article' ? { absolute: input.title } : input.title,
     description: input.description,
     keywords: input.keywords,
     alternates: { canonical: url, languages },

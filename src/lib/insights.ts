@@ -90,7 +90,7 @@ const en: Article[] = [
   {
     slug: 'what-does-an-ma-advisor-do',
     date: '2026-02-10',
-    title: 'What Does an M&A Advisor Do — and When Should You Hire One?',
+    title: 'What an M&A Advisor Does, and When to Hire One',
     description:
       'M&A advisors guide companies through mergers, acquisitions and capital raises. Here is what they do and when engaging one pays for itself.',
     keywords: [
@@ -317,9 +317,9 @@ const en: Article[] = [
   {
     slug: 'ma-market-review-h1-2026',
     date: '2026-08-03',
-    title: 'M&A Market Review — H1 2026: Southeast Europe & Serbia',
+    title: 'M&A Market Review, H1 2026: Southeast Europe',
     description:
-      'Hefestos Capital’s half-year review of the M&A market in Southeast Europe, with a focus on Serbia: the NIS and Addiko deals, the macro picture, and four lessons for owners.',
+      'Half-year review of the M&A market in Southeast Europe with a focus on Serbia: the NIS and Addiko deals, the macro picture and four lessons.',
     keywords: [
       'M&A Serbia',
       'mergers and acquisitions Southeast Europe',
@@ -490,9 +490,9 @@ const en: Article[] = [
   {
     slug: 'restructuring-or-selling-a-company-under-pressure',
     date: '2026-08-24',
-    title: 'Restructuring or Selling: Options When a Company Is Under Pressure',
+    title: 'Restructuring or Selling a Company Under Pressure',
     description:
-      'Refinancing, recapitalisation, a partial sale or a full exit — the realistic options for a company under financial pressure, and why acting early preserves value.',
+      'Refinancing, recapitalisation, a partial sale or a full exit: the realistic options for a company under pressure, and why acting early pays.',
     keywords: [
       'company restructuring',
       'financial restructuring',
@@ -533,7 +533,7 @@ const en: Article[] = [
     date: '2026-08-25',
     title: 'Interview with Stefan Petrović: Lessons from H1 2026',
     description:
-      'Partner Stefan Petrović on our H1 2026 market review — why the higher offer lost at Addiko, what delay actually costs, and why domestic buyers change the game.',
+      'Partner Stefan Petrović on the H1 2026 market review: why the higher offer lost at Addiko, what delay costs, and why domestic buyers matter.',
     keywords: [
       'Stefan Petrović interview',
       'Hefestos Capital',
@@ -574,7 +574,7 @@ const en: Article[] = [
     date: '2026-08-28',
     title: 'The Sale Agreement: Warranties, Escrow and Price Adjustments',
     description:
-      'The headline price is agreed early; what reaches the seller’s account is settled in the agreement. A guide to the price bridge, working capital, warranties and escrow.',
+      'The headline price is agreed early; what reaches the seller gets settled in the agreement. A guide to the price bridge, warranties and escrow.',
     keywords: [
       'share purchase agreement',
       'SPA warranties and indemnities',
@@ -632,7 +632,7 @@ const en: Article[] = [
     date: '2026-08-30',
     title: 'How to Buy a Company: Running a Disciplined Acquisition',
     description:
-      'Buy-side M&A from the acquirer’s side — building an acquisition thesis, approaching targets that are not for sale, diligence that earns its cost, and price discipline.',
+      'Buy-side M&A: the acquisition thesis, approaching targets that are not for sale, diligence that earns its cost, and price discipline.',
     keywords: [
       'how to buy a company',
       'buy-side M&A',
@@ -677,9 +677,9 @@ const en: Article[] = [
   {
     slug: 'corporate-finance-advisory-explained',
     date: '2026-08-31',
-    title: 'Corporate Finance Advisory: What It Covers and When to Use It',
+    title: 'Corporate Finance Advisory: What It Covers',
     description:
-      'What corporate finance actually decides — investment, funding and returns to owners — and the trigger events that make a private company reach for an adviser.',
+      'What corporate finance decides: investment, funding and returns to owners, and the trigger events that make a company reach for an adviser.',
     keywords: [
       'corporate finance',
       'corporate finance advisory',
@@ -923,7 +923,7 @@ const en: Article[] = [
     date: '2026-09-18',
     title: 'Fund or Strategic Buyer: What Actually Differs',
     description:
-      'When two offers arrive, the gap is rarely the price. What each buyer wants from the owner afterwards, what happens to the company, and how certain each is to close.',
+      'When two offers arrive the gap is rarely price. What each buyer asks of the owner afterwards, and how certain each is to close.',
     keywords: [
       'private equity',
       'strategic buyer',
@@ -1015,7 +1015,7 @@ const en: Article[] = [
     date: '2026-09-28',
     title: 'Collecting From a Customer in Distress',
     description:
-      'What can realistically be recovered from a debtor whose account is frozen or who is in bankruptcy, what the receivable is worth, and when to stop spending on collection.',
+      'What can realistically be recovered from a debtor in distress, what the receivable is worth, and when to stop spending on collection.',
     keywords: [
       'debt collection from a company',
       'distressed debtor',
@@ -1108,7 +1108,7 @@ const en: Article[] = [
     date: '2026-10-30',
     title: 'The Letter of Intent: What Binds You and What Does Not',
     description:
-      'Which provisions of a letter of intent actually bind, why exclusivity is the most expensive thing a seller gives away, and what must be in the text before signing.',
+      'Which provisions of a letter of intent actually bind, why exclusivity is the expensive concession, and what must be in the text before signing.',
     keywords: [
       'letter of intent',
       'LOI',
@@ -1471,9 +1471,9 @@ const sr: Article[] = [
   {
     slug: 'ma-market-review-h1-2026',
     date: '2026-08-03',
-    title: 'Pregled tržišta M&A u prvoj polovini 2026: Jugoistočna Evropa i Srbija',
+    title: 'Pregled tržišta M&A, prva polovina 2026',
     description:
-      'Polugodišnji pregled tržišta spajanja i preuzimanja u Jugoistočnoj Evropi, sa fokusom na Srbiju: slučajevi NIS i Addiko, makroekonomski okvir i četiri pouke za vlasnike.',
+      'Polugodišnji pregled tržišta spajanja i preuzimanja u Jugoistočnoj Evropi: slučajevi NIS i Addiko, makroekonomski okvir i pouke za vlasnike.',
     keywords: [
       'spajanja i preuzimanja Srbija',
       'M&A Srbija',
@@ -1606,7 +1606,7 @@ const sr: Article[] = [
   {
     slug: 'how-much-does-it-cost-to-sell-a-company',
     date: '2026-08-18',
-    title: 'Koliko košta prodaja firme: naknade savetnika i ostali troškovi',
+    title: 'Koliko košta prodaja firme: naknade i troškovi',
     description:
       'Retainer, uspešnica, pravni troškovi i due diligence — koliko zaista košta prodaja kompanije i kako strukturirati naknade da interesi budu usklađeni.',
     keywords: [
@@ -1646,7 +1646,7 @@ const sr: Article[] = [
     date: '2026-08-24',
     title: 'Firma u blokadi ili dugovima: restrukturiranje ili prodaja',
     description:
-      'Firma u blokadi ili sa dugovima ima više izlaza od stečaja. Refinansiranje, dokapitalizacija, delimična i potpuna prodaja, i zašto rana reakcija čuva vrednost.',
+      'Firma u blokadi ili sa dugovima ima više izlaza od stečaja. Refinansiranje, dokapitalizacija, prodaja, i zašto rana reakcija čuva vrednost.',
     keywords: [
       'prodaja firme u blokadi',
       'prodaja firme u dugovima',
@@ -1687,7 +1687,7 @@ const sr: Article[] = [
     date: '2026-08-25',
     title: 'Intervju sa Stefanom Petrovićem: pouke prve polovine 2026',
     description:
-      'Partner Stefan Petrović o pregledu tržišta za prvu polovinu 2026 — zašto je kod Addika izgubila viša ponuda, koliko košta odugovlačenje i šta menjaju domaći kupci.',
+      'Partner Stefan Petrović o pregledu tržišta za prvu polovinu 2026: zašto je kod Addika izgubila viša ponuda i šta menjaju domaći kupci.',
     keywords: [
       'intervju Stefan Petrović',
       'Hefestos Capital',
@@ -1726,7 +1726,7 @@ const sr: Article[] = [
   {
     slug: 'sale-agreement-warranties-escrow-price-adjustments',
     date: '2026-08-28',
-    title: 'Ugovor o prodaji udela u doo: garancije, escrow i korekcija cene',
+    title: 'Ugovor o prodaji udela u doo: garancije i cena',
     description:
       'Cena iz ponude dogovara se rano; ono što stigne na račun prodavca određuje se u ugovoru. Vodič kroz most cene, obrtni kapital, garancije prodavca i escrow.',
     keywords: [
@@ -1831,7 +1831,7 @@ const sr: Article[] = [
   {
     slug: 'corporate-finance-advisory-explained',
     date: '2026-08-31',
-    title: 'Korporativne finansije: šta obuhvataju i kada su vam potrebne',
+    title: 'Korporativne finansije: šta obuhvataju',
     description:
       'O čemu korporativne finansije zapravo odlučuju — ulaganja, izvori finansiranja i prinos vlasnicima — i povodi zbog kojih privatna firma poziva savetnika.',
     keywords: [
@@ -2076,7 +2076,7 @@ const sr: Article[] = [
     date: '2026-09-18',
     title: 'Fond ili strateški kupac: šta se stvarno razlikuje',
     description:
-      'Kada stignu dve ponude, razlika je retko samo u ceni. Šta svaki kupac traži od vlasnika posle prodaje, šta radi sa firmom i koliko je izvestan da posao zatvori.',
+      'Kada stignu dve ponude, razlika je retko samo u ceni. Šta svaki kupac traži od vlasnika posle prodaje i šta radi sa firmom.',
     keywords: [
       'private equity',
       'private equity šta je',
@@ -2168,7 +2168,7 @@ const sr: Article[] = [
     date: '2026-09-28',
     title: 'Kako naplatiti dug od firme u blokadi ili stečaju',
     description:
-      'Šta se realno može naplatiti od dužnika u blokadi ili stečaju, koliko to potraživanje zaista vredi, kada prestati trošiti na naplatu i kako se problem sprečava.',
+      'Šta se realno može naplatiti od dužnika u blokadi ili stečaju, koliko to potraživanje vredi i kada prestati trošiti na naplatu.',
     keywords: [
       'kako naplatiti dug od firme',
       'kako naplatiti dug od firme u blokadi',
