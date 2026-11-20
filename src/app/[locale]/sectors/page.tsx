@@ -14,8 +14,15 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
   const locale: Locale = isLocale(params.locale) ? params.locale : DEFAULT_LOCALE;
-  const c = getContent(locale).sectors;
-  return buildMetadata({ locale, segment: NAV_PATHS.sectors, title: c.kicker, description: c.lead });
+  const isSr = locale === 'sr';
+  return buildMetadata({
+    locale,
+    segment: NAV_PATHS.sectors,
+    title: isSr ? 'Sektori: energetika, industrija, FMCG' : 'Sectors We Cover in M&A Transactions',
+    description: isSr
+      ? 'M&A i korporativne finansije u energetici, nafti i gasu, industriji, maloprodaji, robi široke potrošnje i finansijskim uslugama.'
+      : 'M&A and corporate finance experience in energy, oil and gas, industrials, retail, FMCG and financial services across emerging markets.',
+  });
 }
 
 export default function SectorsPage({ params }: { params: { locale: string } }) {

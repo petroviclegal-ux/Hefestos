@@ -2,7 +2,7 @@ import * as React from 'react';
 import Link from 'next/link';
 import { Logo } from './Logo';
 import { Container } from './ui';
-import { site, NAV_KEYS, NAV_PATHS, type Locale } from '@/lib/site';
+import { site, NAV_KEYS, NAV_PATHS, LANDING_PATHS, type Locale } from '@/lib/site';
 import { getMessages, href } from '@/lib/i18n';
 import { getContent } from '@/lib/content';
 
@@ -58,6 +58,14 @@ export function Footer({ locale }: { locale: Locale }) {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href={href(locale, LANDING_PATHS.maAdvisorySerbia)}
+                  className="text-bone/70 transition-colors hover:text-bone"
+                >
+                  {t.common.maInSerbia}
+                </Link>
+              </li>
             </ul>
           </nav>
 

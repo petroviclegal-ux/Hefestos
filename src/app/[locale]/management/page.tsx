@@ -17,8 +17,15 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
   const locale: Locale = isLocale(params.locale) ? params.locale : DEFAULT_LOCALE;
-  const c = getContent(locale).management;
-  return buildMetadata({ locale, segment: NAV_PATHS.management, title: c.kicker, description: c.lead });
+  const isSr = locale === 'sr';
+  return buildMetadata({
+    locale,
+    segment: NAV_PATHS.management,
+    title: isSr ? 'Naš tim: M&A i korporativne finansije' : 'Our Team: M&A and Corporate Finance',
+    description: isSr
+      ? 'Partneri i savetnici Hefestos Capitala: investiciono bankarstvo, korporativne finansije i pravno savetovanje u transakcijama.'
+      : 'The partners and advisers of Hefestos Capital, with decades of experience in investment banking across Europe and the Middle East.',
+  });
 }
 
 export default function ManagementPage({ params }: { params: { locale: string } }) {

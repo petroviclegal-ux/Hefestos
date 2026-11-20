@@ -91,6 +91,19 @@ export const NAV_KEYS = [
 ] as const;
 export type NavKey = (typeof NAV_KEYS)[number];
 
+/**
+ * Standalone landing pages: real pages with their own URL that are reached
+ * from the body of the site rather than from the primary navigation.
+ *
+ * The nav is deliberately left at seven items. These segments are shared by
+ * both locales, exactly as the nav segments are, so every URL keeps a valid
+ * hreflang pair and the Serbian version of the page targets the Serbian
+ * phrasing of the same service.
+ */
+export const LANDING_PATHS = {
+  maAdvisorySerbia: 'ma-advisory-serbia',
+} as const;
+
 /** Maps a nav key to its (locale-prefixed) path segment. */
 export const NAV_PATHS: Record<NavKey, string> = {
   about: 'about',

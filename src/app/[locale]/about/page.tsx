@@ -14,14 +14,18 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
   const locale: Locale = isLocale(params.locale) ? params.locale : DEFAULT_LOCALE;
-  const c = getContent(locale).about;
+  // The kicker ("Who We Are" / "Ko smo mi") is a label, not a search term.
+  const title =
+    locale === 'sr'
+      ? 'O nama: investiciono bankarstvo Beograd'
+      : 'About: Investment Banking in Belgrade';
   // The on-page lede runs past the ~160 characters a search result shows, so the
   // meta description is written separately rather than reusing it.
   const description =
     locale === 'sr'
       ? 'Nezavisna investiciono-bankarska firma osnovana 2001. Savetujemo pri prodaji i kupovini firmi, spajanjima i prikupljanju kapitala.'
       : 'An independent investment banking firm founded in 2001, advising on mergers, acquisitions and capital raising across emerging markets.';
-  return buildMetadata({ locale, segment: NAV_PATHS.about, title: c.kicker, description });
+  return buildMetadata({ locale, segment: NAV_PATHS.about, title, description });
 }
 
 export default function AboutPage({ params }: { params: { locale: string } }) {

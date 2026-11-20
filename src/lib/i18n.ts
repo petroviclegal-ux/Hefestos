@@ -54,6 +54,7 @@ const en = {
     since: 'Since',
     ourServices: 'Our services',
     ourSectors: 'Sectors we cover',
+    maInSerbia: 'M&A advisory in Serbia',
   },
 };
 
@@ -101,6 +102,7 @@ const sr = {
     since: 'Od',
     ourServices: 'Naše usluge',
     ourSectors: 'Sektori koje pokrivamo',
+    maInSerbia: 'M&A savetovanje u Srbiji',
   },
 } satisfies Messages;
 

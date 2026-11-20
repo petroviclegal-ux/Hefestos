@@ -14,8 +14,15 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
   const locale: Locale = isLocale(params.locale) ? params.locale : DEFAULT_LOCALE;
-  const c = getContent(locale).contact;
-  return buildMetadata({ locale, segment: NAV_PATHS.contact, title: c.kicker, description: c.lead });
+  const isSr = locale === 'sr';
+  return buildMetadata({
+    locale,
+    segment: NAV_PATHS.contact,
+    title: isSr ? 'Kontakt: M&A savetnici u Beogradu' : 'Contact Our M&A Advisers in Belgrade',
+    description: isSr
+      ? 'Bulevar Mihajla Pupina 115v, Novi Beograd. Pozovite +381 11 30 20 010 ili pišite na office@hefcap.com za poverljiv razgovor.'
+      : 'Bulevar Mihajla Pupina 115v, Belgrade. Call +381 11 30 20 010 or email office@hefcap.com to discuss a transaction in confidence.',
+  });
 }
 
 export default function ContactPage({ params }: { params: { locale: string } }) {

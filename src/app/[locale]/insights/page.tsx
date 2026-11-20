@@ -19,7 +19,9 @@ export function generateMetadata({ params }: { params: { locale: string } }): Me
   return buildMetadata({
     locale,
     segment: NAV_PATHS.insights,
-    title: isSr ? 'Analize' : 'Insights',
+    title: isSr
+      ? 'Analize o prodaji i kupovini firme'
+      : 'Insights on Selling and Buying Companies',
     description: isSr
       ? 'Analize i saveti o prodaji kompanija, spajanjima i akvizicijama, procenama vrednosti i prikupljanju kapitala.'
       : 'Insights and guidance on selling companies, mergers and acquisitions, valuation and raising capital.',

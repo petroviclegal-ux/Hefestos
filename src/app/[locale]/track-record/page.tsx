@@ -14,14 +14,17 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
   const locale: Locale = isLocale(params.locale) ? params.locale : DEFAULT_LOCALE;
-  const c = getContent(locale).trackRecord;
+  const title =
+    locale === 'sr'
+      ? 'Reference i realizovane transakcije'
+      : 'Track Record of Completed Transactions';
   // The on-page lede is 166 characters in English, past what a search result
   // shows, so the meta description is written separately rather than reused.
   const description =
     locale === 'sr'
       ? 'Stotine transakcija na tržištima u razvoju, za klijente od državnih institucija do porodičnih firmi. Odabrane transakcije Hefestos Capitala.'
       : 'Hundreds of transactions across emerging markets, for clients from sovereign entities to family-owned businesses. Selected Hefestos Capital deals.';
-  return buildMetadata({ locale, segment: NAV_PATHS.trackRecord, title: c.kicker, description });
+  return buildMetadata({ locale, segment: NAV_PATHS.trackRecord, title, description });
 }
 
 export default function TrackRecordPage({ params }: { params: { locale: string } }) {

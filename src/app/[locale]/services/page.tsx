@@ -5,7 +5,14 @@ import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { buildMetadata } from '@/lib/seo';
 import { getContent } from '@/lib/content';
 import { getMessages, href } from '@/lib/i18n';
-import { LOCALES, NAV_PATHS, DEFAULT_LOCALE, isLocale, type Locale } from '@/lib/site';
+import {
+  LOCALES,
+  NAV_PATHS,
+  LANDING_PATHS,
+  DEFAULT_LOCALE,
+  isLocale,
+  type Locale,
+} from '@/lib/site';
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
@@ -13,8 +20,22 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
   const locale: Locale = isLocale(params.locale) ? params.locale : DEFAULT_LOCALE;
-  const c = getContent(locale).services;
-  return buildMetadata({ locale, segment: NAV_PATHS.services, title: c.kicker, description: c.lead });
+  const isSr = locale === 'sr';
+  // The on-page kicker ("What We Do" / "Čime se bavimo") is a label, not a
+  // phrase anyone searches for. The commercial pages carry the service name
+  // owners actually type, and their own description rather than the visible
+  // lede, which runs past what a search result shows.
+  return buildMetadata({
+    locale,
+    segment: NAV_PATHS.services,
+    title: isSr ? 'M&A savetovanje i prodaja firme' : 'M&A Advisory & Corporate Finance',
+    description: isSr
+      ? 'Savetujemo pri prodaji i kupovini firme, spajanjima, dokapitalizaciji i restrukturiranju. Investiciono bankarstvo iz Beograda.'
+      : 'Sell-side and buy-side M&A, joint ventures, equity and debt raising and special situations advisory for companies in emerging markets.',
+    keywords: isSr
+      ? ['M&A savetovanje', 'prodaja firme', 'kupovina firme', 'dokapitalizacija', 'korporativne finansije']
+      : ['M&A advisory', 'corporate finance', 'sell-side M&A', 'buy-side M&A', 'capital raising'],
+  });
 }
 
 export default function ServicesPage({ params }: { params: { locale: string } }) {
@@ -62,8 +83,11 @@ export default function ServicesPage({ params }: { params: { locale: string } })
               </article>
             ))}
           </div>
-          <div className="mt-12">
+          <div className="mt-12 flex flex-wrap items-center gap-6">
             <CTALink href={href(locale, NAV_PATHS.contact)}>{t.common.talkToUs}</CTALink>
+            <CTALink href={href(locale, LANDING_PATHS.maAdvisorySerbia)} variant="ghost">
+              {t.common.maInSerbia}
+            </CTALink>
           </div>
         </Container>
       </Section>
