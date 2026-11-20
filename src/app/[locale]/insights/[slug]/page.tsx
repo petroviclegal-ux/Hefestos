@@ -8,7 +8,7 @@ import { JsonLd } from '@/components/JsonLd';
 import { CTALink } from '@/components/ui';
 import { buildMetadata } from '@/lib/seo';
 import { articleSchema } from '@/lib/structured-data';
-import { getArticle, getArticles, allArticleSlugs, type Block } from '@/lib/insights';
+import { getArticle, relatedArticles, allArticleSlugs, type Block } from '@/lib/insights';
 import { getMessages, href } from '@/lib/i18n';
 import { LOCALES, NAV_PATHS, DEFAULT_LOCALE, isLocale, type Locale } from '@/lib/site';
 
@@ -67,7 +67,7 @@ export default function ArticlePage({ params }: { params: { locale: string; slug
   const t = getMessages(locale);
   const isSr = locale === 'sr';
   const path = `${href(locale, NAV_PATHS.insights)}${a.slug}/`;
-  const related = getArticles(locale).filter((x) => x.slug !== a.slug).slice(0, 2);
+  const related = relatedArticles(locale, a.slug, 4);
 
   /*
    * Every article carries a cover for the index grid and the share card, but
@@ -128,9 +128,9 @@ export default function ArticlePage({ params }: { params: { locale: string; slug
           </article>
 
           {related.length > 0 && (
-            <div className="mx-auto mt-16 max-w-prose">
-              <h2 className="font-serif text-xl text-ink">{t.common.allInsights}</h2>
-              <ul className="mt-5 space-y-4">
+            <div className="mx-auto mt-16 max-w-prose border-t border-ink/10 pt-10">
+              <h2 className="font-serif text-xl text-ink">{t.common.relatedReading}</h2>
+              <ul className="mt-6 space-y-6">
                 {related.map((r) => (
                   <li key={r.slug}>
                     <Link
@@ -139,6 +139,7 @@ export default function ArticlePage({ params }: { params: { locale: string; slug
                     >
                       {r.title}
                     </Link>
+                    <p className="mt-1.5 text-sm leading-relaxed text-ink/60">{r.description}</p>
                   </li>
                 ))}
               </ul>

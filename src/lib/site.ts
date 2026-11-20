@@ -56,6 +56,22 @@ export const site = {
     linkedin: '',
   },
 
+  /**
+   * Public profiles that are definitely this firm, emitted as `sameAs` on the
+   * Organization. This is what ties hefcap.com to the entity Google already
+   * knows from elsewhere; without it the domain and the company are two
+   * unconnected things as far as the index is concerned.
+   *
+   * ACCURACY: add a URL only once it has been opened and confirmed to be this
+   * firm. A wrong entry is worse than an empty list, because it asserts that
+   * hefcap.com is some other company.
+   *
+   * TODO(client): LinkedIn company page, Crunchbase, any chamber or
+   * association listing. Note that crunchbase.com/organization/hefestos-capital
+   * currently resolves to a different company, so it must not go in here.
+   */
+  profiles: [] as readonly string[],
+
   // Google Maps embed centred on the New Belgrade (Novi Beograd) address.
   mapEmbedUrl:
     'https://www.google.com/maps?q=Bulevar%20Mihajla%20Pupina%20115v%2C%20Belgrade%2C%20Serbia&output=embed',

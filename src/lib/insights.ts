@@ -744,6 +744,7 @@ const en: Article[] = [
       'add-backs',
       'adjusted EBITDA',
       'EBITDA multiple',
+      'business valuation',
       'selling a business',
     ],
     cover: { src: '/images/insights/ebitda.jpg', alt: '' },
@@ -1897,6 +1898,7 @@ const sr: Article[] = [
       'EBITDA prodaja firme',
       'šta je EBITDA',
       'multiplikator EBITDA',
+      'procena vrednosti firme',
       'dobit pre kamata poreza i amortizacije',
     ],
     cover: { src: '/images/insights/ebitda.jpg', alt: '' },
@@ -2366,6 +2368,59 @@ export function getArticles(locale: Locale): Article[] {
 
 export function getArticle(locale: Locale, slug: string): Article | undefined {
   return byLocale[locale].find((a) => a.slug === slug);
+}
+
+/** Words too common to say anything about what an article is about. */
+const STOPWORDS = new Set([
+  'the', 'and', 'for', 'what', 'when', 'how', 'your', 'with', 'from', 'that',
+  'kako', 'kada', 'koliko', 'firme', 'firmu', 'firma', 'sta', 'šta', 'koji',
+  'srbiji', 'srbija', 'cena', 'procedura',
+]);
+
+function topicTokens(keywords: string[]): Set<string> {
+  const out = new Set<string>();
+  for (const k of keywords) {
+    for (const w of k.toLowerCase().split(/[^0-9a-zà-ž&-]+/)) {
+      if (w.length >= 4 && !STOPWORDS.has(w)) out.add(w);
+    }
+  }
+  return out;
+}
+
+/**
+ * The articles most closely related to `slug`, most related first.
+ *
+ * This used to be the newest two articles, which meant all 56 article pages
+ * linked to the same two and every other article received no internal link at
+ * all. Internal links are how a page passes on whatever standing the domain
+ * has, so the articles that rank on page one were the ones getting none of it.
+ *
+ * Relatedness is scored on the keywords the articles already carry: an exact
+ * shared keyword counts for three, a shared significant word for one. Ties go
+ * to the nearest article in publication order, which keeps the inbound links
+ * spread across the whole set rather than piling onto a handful.
+ */
+export function relatedArticles(locale: Locale, slug: string, count = 4): Article[] {
+  const all = getArticles(locale);
+  const selfIndex = all.findIndex((a) => a.slug === slug);
+  if (selfIndex === -1) return all.slice(0, count);
+
+  const self = all[selfIndex];
+  const myKeywords = new Set(self.keywords.map((k) => k.toLowerCase().trim()));
+  const myTokens = topicTokens(self.keywords);
+
+  return all
+    .map((a, i) => {
+      if (a.slug === slug) return null;
+      let score = 0;
+      for (const k of a.keywords) if (myKeywords.has(k.toLowerCase().trim())) score += 3;
+      for (const w of topicTokens(a.keywords)) if (myTokens.has(w)) score += 1;
+      return { a, score, distance: Math.abs(i - selfIndex) };
+    })
+    .filter((x): x is { a: Article; score: number; distance: number } => x !== null)
+    .sort((x, y) => y.score - x.score || x.distance - y.distance)
+    .slice(0, count)
+    .map((x) => x.a);
 }
 
 /** All slugs (shared across locales) for generateStaticParams. */

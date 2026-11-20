@@ -43,7 +43,10 @@ export function organizationSchema(locale: Locale) {
       'Capital Raising',
       'Joint Ventures',
     ],
-    ...(site.contact.linkedin ? { sameAs: [site.contact.linkedin] } : {}),
+    ...(() => {
+      const sameAs = [site.contact.linkedin, ...site.profiles].filter(Boolean);
+      return sameAs.length ? { sameAs } : {};
+    })(),
   };
 }
 
