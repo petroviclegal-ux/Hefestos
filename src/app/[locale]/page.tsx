@@ -29,7 +29,7 @@ export function generateMetadata({ params }: { params: { locale: string } }): Me
       ? 'Investiciono bankarstvo i M&A savetovanje'
       : 'Investment Banking & M&A Advisory',
     description: isSr
-      ? 'Hefestos Capital je nezavisna investiciono-bankarska firma. Savetujemo pri prodaji i kupovini kompanija, spajanjima i prikupljanju kapitala na tržištima u razvoju.'
+      ? 'Nezavisna investiciono-bankarska firma u Beogradu. Savetujemo vlasnike pri prodaji firme, kupovini, spajanjima i prikupljanju kapitala.'
       : 'Hefestos Capital is an independent investment banking firm advising on selling and buying companies, mergers and capital raising across emerging markets.',
     keywords: isSr
       ? ['investiciono bankarstvo', 'M&A savetnik', 'prodaja kompanije', 'prikupljanje kapitala', 'Beograd']
