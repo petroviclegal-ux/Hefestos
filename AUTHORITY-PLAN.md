@@ -58,8 +58,13 @@ na hefcap.com.
 Dakle: adresa koja nosi vaše ime opisuje drugu firmu i upućuje na vas. Za
 Google je to signal da hefcap.com i Hefestos Capital možda nisu isto.
 
-Treba utvrditi kako je do toga došlo i ili vratiti zapis ili otvoriti čist
-profil pod drugom adresom.
+Milutin Nikolić je na stranici tima hefcap.com-a naveden kao Senior Advisor,
+pa ovo nije nepoznat nalog nego profil koji je najverovatnije prepravljen
+unutar kruga firme. Prvi korak je razgovor sa njim, ne prijava Crunchbase-u.
+
+Ishod treba da bude jedno od dva: zapis se vraća na Hefestos Capital, ili se
+profil firme otvara pod drugom adresom a stari prestaje da linkuje na
+hefcap.com. Dok traje jedno ili drugo, ta adresa ne ide u `site.profiles`.
 
 ### 1.2 Google Business Profile
 
