@@ -55,6 +55,9 @@ const en = {
     ourServices: 'Our services',
     ourSectors: 'Sectors we cover',
     maInSerbia: 'M&A advisory in Serbia',
+    faq: 'Frequently asked questions',
+    updated: 'Updated',
+    sellACompany: 'Selling a company in Serbia',
   },
 };
 
@@ -103,6 +106,9 @@ const sr = {
     ourServices: 'Naše usluge',
     ourSectors: 'Sektori koje pokrivamo',
     maInSerbia: 'M&A savetovanje u Srbiji',
+    faq: 'Česta pitanja',
+    updated: 'Ažurirano',
+    sellACompany: 'Prodaja firme',
   },
 } satisfies Messages;
 

@@ -1,4 +1,5 @@
 import { type Locale } from './site';
+import { saleEn, saleSr } from './insights-sale';
 
 /**
  * Bilingual "Insights" articles — the site's SEO content engine. Each article
@@ -9,16 +10,51 @@ import { type Locale } from './site';
  * both the `en` and `sr` arrays with matching slugs.
  */
 
+/**
+ * Body blocks. Text in `p`, `ul` items, table cells and FAQ answers may carry
+ * inline links written as [anchor text](segment), where the segment is
+ * locale-neutral ('prodaja-firme', 'insights/how-to-sell-a-company') and gets
+ * the locale prefix at render time. Contextual links with descriptive anchors
+ * are what tell a search engine which page answers which query, so use them
+ * inside the prose rather than only in link lists.
+ */
 export type Block =
   | { kind: 'p'; text: string }
   | { kind: 'h2'; text: string }
+  | { kind: 'h3'; text: string }
   | { kind: 'ul'; items: string[] }
   /**
    * A list of internal links. `to` is a locale-neutral segment — 'services',
    * or 'insights/how-to-sell-a-company' — and the locale prefix is added when
    * the block is rendered, so the same data serves both languages.
    */
-  | { kind: 'links'; items: { label: string; to: string }[] };
+  | { kind: 'links'; items: { label: string; to: string }[] }
+  /** A data table. `note` renders under it as the source or caveat line. */
+  | { kind: 'table'; caption: string; head: string[]; rows: string[][]; note?: string }
+  /** Horizontal Gantt chart: phases with a start and end on a shared scale. */
+  | {
+      kind: 'timeline';
+      title: string;
+      unit: string;
+      items: { label: string; start: number; end: number }[];
+      note?: string;
+    }
+  /** Horizontal bar chart of single values. */
+  | { kind: 'bars'; title: string; unit: string; items: { label: string; value: number }[]; note?: string }
+  /**
+   * Bridge (waterfall) chart. Plain items move the running total by `value`;
+   * an item with `total: true` is drawn from zero and resets the running
+   * total to its value, so the chart can show a subtotal and carry on.
+   */
+  | {
+      kind: 'bridge';
+      title: string;
+      unit: string;
+      items: { label: string; value: number; total?: boolean }[];
+      note?: string;
+    };
+
+export type ArticleFaq = { question: string; answer: string };
 
 export type Article = {
   slug: string;
@@ -49,7 +85,17 @@ export type Article = {
    * to their portrait on the team page as one and the same individual.
    */
   about?: { slug: string; name: string; jobTitle: string };
+  /**
+   * Date of the last substantive revision, ISO. Emitted as dateModified so a
+   * rewritten article is not presented as unchanged since first publication.
+   */
+  updated?: string;
   body: Block[];
+  /**
+   * Questions answered at the end of the article, rendered visibly and as
+   * FAQPage structured data. Write them as the question an owner would type.
+   */
+  faq?: ArticleFaq[];
 };
 
 const en: Article[] = [
@@ -2360,7 +2406,10 @@ const sr: Article[] = [
   },
 ];
 
-const byLocale: Record<Locale, Article[]> = { en, sr };
+const byLocale: Record<Locale, Article[]> = {
+  en: [...en, ...saleEn],
+  sr: [...sr, ...saleSr],
+};
 
 export function getArticles(locale: Locale): Article[] {
   return [...byLocale[locale]].sort((a, b) => b.date.localeCompare(a.date));
@@ -2425,5 +2474,5 @@ export function relatedArticles(locale: Locale, slug: string, count = 4): Articl
 
 /** All slugs (shared across locales) for generateStaticParams. */
 export function allArticleSlugs(): string[] {
-  return en.map((a) => a.slug);
+  return byLocale.en.map((a) => a.slug);
 }

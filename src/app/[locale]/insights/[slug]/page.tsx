@@ -7,8 +7,9 @@ import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { JsonLd } from '@/components/JsonLd';
 import { CTALink } from '@/components/ui';
 import { buildMetadata } from '@/lib/seo';
-import { articleSchema } from '@/lib/structured-data';
-import { getArticle, relatedArticles, allArticleSlugs, type Block } from '@/lib/insights';
+import { articleSchema, faqSchema } from '@/lib/structured-data';
+import { getArticle, relatedArticles, allArticleSlugs } from '@/lib/insights';
+import { ArticleBody, RichText, plainText } from '@/components/ArticleBlocks';
 import { getMessages, href } from '@/lib/i18n';
 import { LOCALES, NAV_PATHS, DEFAULT_LOCALE, isLocale, type Locale } from '@/lib/site';
 
@@ -34,29 +35,6 @@ export function generateMetadata({
     publishedTime: a.date,
     ogImage: a.cover?.src,
   });
-}
-
-function renderBlock(block: Block, i: number, locale: Locale) {
-  if (block.kind === 'h2') return <h2 key={i}>{block.text}</h2>;
-  if (block.kind === 'ul')
-    return (
-      <ul key={i}>
-        {block.items.map((it, j) => (
-          <li key={j}>{it}</li>
-        ))}
-      </ul>
-    );
-  if (block.kind === 'links')
-    return (
-      <ul key={i}>
-        {block.items.map((it, j) => (
-          <li key={j}>
-            <Link href={href(locale, it.to)}>{it.label}</Link>
-          </li>
-        ))}
-      </ul>
-    );
-  return <p key={i}>{block.text}</p>;
 }
 
 export default function ArticlePage({ params }: { params: { locale: string; slug: string } }) {
@@ -93,8 +71,12 @@ export default function ArticlePage({ params }: { params: { locale: string; slug
       <Section>
         <Container>
           <article className="mx-auto max-w-prose">
-            <time className="text-xs font-sans uppercase tracking-[0.16em] text-ink/45" dateTime={a.date}>
-              {new Date(a.date).toLocaleDateString(isSr ? 'sr-RS' : 'en-GB', {
+            <time
+              className="text-xs font-sans uppercase tracking-[0.16em] text-ink/45"
+              dateTime={a.updated ?? a.date}
+            >
+              {a.updated ? `${t.common.updated} ` : null}
+              {new Date(a.updated ?? a.date).toLocaleDateString(isSr ? 'sr-RS' : 'en-GB', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric',
@@ -117,7 +99,20 @@ export default function ArticlePage({ params }: { params: { locale: string; slug
             ) : null}
 
             <div className="article-prose mt-6">
-              {a.body.map((block, i) => renderBlock(block, i, locale))}
+              <ArticleBody blocks={a.body} locale={locale} />
+              {a.faq && a.faq.length > 0 ? (
+                <>
+                  <h2>{t.common.faq}</h2>
+                  {a.faq.map((f, i) => (
+                    <div key={i}>
+                      <h3>{f.question}</h3>
+                      <p className="mt-2">
+                        <RichText text={f.answer} locale={locale} />
+                      </p>
+                    </div>
+                  ))}
+                </>
+              ) : null}
             </div>
 
             <div className="mt-12 border-t border-ink/10 pt-8">
@@ -158,12 +153,18 @@ export default function ArticlePage({ params }: { params: { locale: string; slug
           description: a.description,
           path,
           datePublished: a.date,
+          dateModified: a.updated,
           locale,
           image: a.cover?.src,
           imageCaption: a.cover?.caption,
           about: a.about,
         })}
       />
+      {a.faq && a.faq.length > 0 ? (
+        <JsonLd
+          data={faqSchema(a.faq.map((f) => ({ question: f.question, answer: plainText(f.answer) })))}
+        />
+      ) : null}
     </>
   );
 }

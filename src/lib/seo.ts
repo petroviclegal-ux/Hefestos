@@ -11,6 +11,11 @@ type PageSeoInput = {
   type?: 'website' | 'article';
   publishedTime?: string;
   keywords?: string[];
+  /**
+   * Drop the brand suffix, as articles already do: for a landing page whose
+   * target phrase needs all of the ~60 characters a search result shows.
+   */
+  absoluteTitle?: boolean;
 };
 
 const DEFAULT_OG = '/og/og-default.svg';
@@ -34,7 +39,7 @@ export function buildMetadata(input: PageSeoInput): Metadata {
   const { locale, segment = '' } = input;
   const url = localizedUrl(locale, segment);
   const ogImage = new URL(input.ogImage ?? DEFAULT_OG, SITE_URL).toString();
-  const fullTitle = `${input.title} | ${site.name}`;
+  const fullTitle = input.absoluteTitle ? input.title : `${input.title} | ${site.name}`;
   // Only the default card has known 1200×630 dimensions. For a page-supplied
   // image we omit width/height rather than declare the wrong aspect ratio,
   // which would make crawlers crop the card badly.
@@ -74,7 +79,8 @@ export function buildMetadata(input: PageSeoInput): Metadata {
     // Articles compete on their own topic, so they carry no brand suffix: the
     // template in the locale layout would otherwise spend 19 characters of the
     // 60 Google displays. Section and company pages keep it.
-    title: input.type === 'article' ? { absolute: input.title } : input.title,
+    title:
+      input.type === 'article' || input.absoluteTitle ? { absolute: input.title } : input.title,
     description: input.description,
     keywords: input.keywords,
     alternates: { canonical: url, languages },

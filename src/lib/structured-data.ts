@@ -104,6 +104,8 @@ export function articleSchema(input: {
   description: string;
   path: string;
   datePublished: string;
+  /** Last substantive revision; falls back to datePublished. */
+  dateModified?: string;
   locale: Locale;
   /** Optional cover image path, e.g. '/images/insights/foo.jpg'. */
   image?: string;
@@ -152,7 +154,7 @@ export function articleSchema(input: {
         }
       : {}),
     datePublished: input.datePublished,
-    dateModified: input.datePublished,
+    dateModified: input.dateModified ?? input.datePublished,
     author: { '@type': 'Organization', name: site.name, url: site.url },
     publisher: {
       '@type': 'Organization',

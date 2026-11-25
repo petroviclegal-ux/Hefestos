@@ -108,7 +108,7 @@ const COPY: Record<Locale, Copy> = {
     clients: [
       {
         title: 'Vlasnici firmi u Srbiji',
-        body: 'Prodaja celog udela, izlaz jednog suvlasnika ili ulazak manjinskog investitora koji finansira rast a ne menja kontrolu.',
+        body: 'Prodaja celog udela, izlaz jednog suvlasnika ili ulazak manjinskog investitora koji finansira rast, dok kontrola ostaje vlasniku.',
       },
       {
         title: 'Kupci iz inostranstva',
@@ -120,21 +120,21 @@ const COPY: Record<Locale, Copy> = {
       },
       {
         title: 'Situacije sa rokom',
-        body: 'Pritisak poverilaca, spor između suvlasnika i restrukturiranje, gde tempo određuje neko drugi a ne prodavac.',
+        body: 'Pritisak poverilaca, spor između suvlasnika i restrukturiranje, kada tempo određuju poverioci, sud ili drugi suvlasnik.',
       },
     ],
     mandateHeading: 'Kako mandat u Srbiji izgleda u praksi',
     mandate: [
       'Procena počinje od normalizovanih brojeva. Kroz bilanse privatnih firmi u Srbiji redovno prolaze troškovi vlasnika, zakup od povezanog lica i imovina koja nije u funkciji poslovanja. Kupac će svaku od tih stavki izdvojiti, pa to radimo prvi, pre nego što materijal izađe iz kancelarije.',
       'Krug kupaca je uzak. Za firmu srednje veličine u Srbiji postoji nekoliko domaćih i regionalnih kupaca sposobnih da plate cenu koja odgovara vrednosti. Proces koji se zadrži na njima nije konkurentan, pa ga vodimo i prema strateškim kupcima i fondovima iz Evrope i šire, gde se cena zaista formira.',
-      'Poverljivost u malom tržištu nije administrativno pitanje. Vest da je firma na prodaju stiže do konkurenata, dobavljača i zaposlenih brže nego do kupca, i po pravilu pre nego što prodavac stigne da je objasni. Podaci se zato otvaraju u fazama, uz ugovor o poverljivosti, a u prvom kontaktu kupac dobija profil firme bez njenog imena.',
-      'Zatvaranje nosi korake koje kupac iz inostranstva po pravilu ne poznaje: overu ugovora o prenosu udela kod javnog beležnika, registraciju promene u APR-u, saglasnost Komisije za zaštitu konkurencije kada su prihodi strana iznad zakonskih pragova, i mehaniku plaćanja preko dve valute. Rokovi za ovo ulaze u vremenski okvir transakcije i planiraju se unapred, a ne kada ugovor već stoji na stolu.',
+      'U malom tržištu vest da je firma na prodaju stiže do konkurenata, dobavljača i zaposlenih brže nego do kupca, i po pravilu pre nego što prodavac stigne da je objasni. Podaci se zato otvaraju u fazama, uz ugovor o poverljivosti, a u prvom kontaktu kupac dobija profil firme bez njenog imena.',
+      'Zatvaranje nosi korake koje kupac iz inostranstva po pravilu ne poznaje: overu ugovora o prenosu udela kod javnog beležnika, registraciju promene u APR-u, saglasnost Komisije za zaštitu konkurencije kada su prihodi strana iznad zakonskih pragova, i mehaniku plaćanja preko dve valute. Rokovi za ovo ulaze u vremenski okvir transakcije i planiraju se od početka procesa.',
     ],
     sidesHeading: 'Dve strane istog procesa',
     sides: [
       {
         title: 'Prodaja firme',
-        body: 'Priprema poslovanja i dokumentacije, procena vrednosti, lista kupaca, informacioni memorandum, vođenje konkurentnog procesa, pregovori o ugovoru i zatvaranje. Vlasnik tokom celog procesa razgovara sa istim partnerom, ne sa timom koji se menja po fazama.',
+        body: 'Priprema poslovanja i dokumentacije, procena vrednosti, lista kupaca, informacioni memorandum, vođenje konkurentnog procesa, pregovori o ugovoru i zatvaranje. Vlasnik tokom celog procesa razgovara sa istim partnerom.',
       },
       {
         title: 'Kupovina firme',
@@ -201,21 +201,21 @@ const COPY: Record<Locale, Copy> = {
       },
       {
         title: 'Situations with a clock on them',
-        body: 'Creditor pressure, shareholder disputes and restructurings, where the pace is set by someone other than the seller.',
+        body: 'Creditor pressure, shareholder disputes and restructurings, where creditors, a court or another shareholder set the pace.',
       },
     ],
     mandateHeading: 'What a Serbian mandate involves in practice',
     mandate: [
       'Valuation starts from normalised figures. The accounts of private Serbian companies routinely carry owner costs, rent paid to a related party and assets that do nothing for the business. A buyer will strip each of those out, so we do it first, before any material leaves the office.',
       'The buyer universe is narrow. For a mid-sized Serbian company there are a handful of domestic and regional buyers able to pay what the business is worth. A process confined to them is not competitive, so we also run it to strategic buyers and funds across Europe and beyond, where the price is actually set.',
-      'Confidentiality in a small market is not an administrative matter. Word that a company is for sale reaches competitors, suppliers and staff faster than it reaches a buyer, and usually before the seller has had a chance to explain it. Information is released in stages under a confidentiality agreement, and a buyer first sees a profile of the business without its name.',
-      'Completion carries local steps a buyer from abroad rarely expects: notarial certification of the share transfer agreement, registration of the change with the Business Registers Agency, competition clearance where the revenues of the parties exceed the statutory thresholds, and payment mechanics across two currencies. The time these take belongs in the transaction timetable from the start rather than once the agreement is on the table.',
+      'In a small market, word that a company is for sale reaches competitors, suppliers and staff faster than it reaches a buyer, and usually before the seller has had a chance to explain it. Information is released in stages under a confidentiality agreement, and a buyer first sees a profile of the business without its name.',
+      'Completion carries local steps a buyer from abroad rarely expects: notarial certification of the share transfer agreement, registration of the change with the Business Registers Agency, competition clearance where the revenues of the parties exceed the statutory thresholds, and payment mechanics across two currencies. The time these take belongs in the transaction timetable from the start.',
     ],
     sidesHeading: 'Two sides of the same process',
     sides: [
       {
         title: 'Selling a company',
-        body: 'Preparing the business and its documentation, valuation, the buyer list, the information memorandum, running a competitive process, negotiating the agreement and closing. The owner speaks to the same partner throughout rather than to a team that changes by phase.',
+        body: 'Preparing the business and its documentation, valuation, the buyer list, the information memorandum, running a competitive process, negotiating the agreement and closing. The owner speaks to the same partner throughout.',
       },
       {
         title: 'Buying a company',
@@ -332,7 +332,10 @@ export default function MaAdvisorySerbiaPage({ params }: { params: { locale: str
               </div>
             ))}
           </div>
-          <div className="mt-10">
+          <div className="mt-10 flex flex-wrap items-center gap-6">
+            <CTALink href={href(locale, LANDING_PATHS.sellACompany)} variant="ghost">
+              {t.common.sellACompany}
+            </CTALink>
             <CTALink href={href(locale, NAV_PATHS.services)} variant="ghost">
               {t.common.ourServices}
             </CTALink>

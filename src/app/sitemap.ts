@@ -27,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { segment: '', priority: 1.0, changeFrequency: 'monthly' },
     { segment: NAV_PATHS.about, priority: 0.8, changeFrequency: 'yearly' },
     { segment: NAV_PATHS.services, priority: 0.9, changeFrequency: 'monthly' },
+    { segment: LANDING_PATHS.sellACompany, priority: 0.9, changeFrequency: 'monthly' },
     { segment: LANDING_PATHS.maAdvisorySerbia, priority: 0.9, changeFrequency: 'monthly' },
     { segment: NAV_PATHS.trackRecord, priority: 0.8, changeFrequency: 'yearly' },
     { segment: NAV_PATHS.sectors, priority: 0.7, changeFrequency: 'yearly' },

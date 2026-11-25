@@ -102,6 +102,9 @@ export type NavKey = (typeof NAV_KEYS)[number];
  */
 export const LANDING_PATHS = {
   maAdvisorySerbia: 'ma-advisory-serbia',
+  // A Serbian segment in both locales: the page exists for the query
+  // "prodaja firme", and the URL is what the Serbian result displays.
+  sellACompany: 'prodaja-firme',
 } as const;
 
 /** Maps a nav key to its (locale-prefixed) path segment. */

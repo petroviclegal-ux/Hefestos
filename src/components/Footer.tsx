@@ -60,6 +60,14 @@ export function Footer({ locale }: { locale: Locale }) {
               ))}
               <li>
                 <Link
+                  href={href(locale, LANDING_PATHS.sellACompany)}
+                  className="text-bone/70 transition-colors hover:text-bone"
+                >
+                  {t.common.sellACompany}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href={href(locale, LANDING_PATHS.maAdvisorySerbia)}
                   className="text-bone/70 transition-colors hover:text-bone"
                 >
