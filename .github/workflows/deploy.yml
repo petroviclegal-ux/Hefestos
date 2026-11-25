@@ -44,7 +44,19 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build
+      - name: Build
+        run: |
+          set -o pipefail
+          npm run build 2>&1 | tee build.log
+
+      # Reading a job log needs a signed-in account with access to the repo.
+      # Annotations are served publicly by the checks API, so a failed build
+      # repeats the tail of its output as one, readable without signing in.
+      - name: Surface build errors
+        if: failure()
+        run: |
+          body=$(tail -n 120 build.log | sed 's/\x1b\[[0-9;]*m//g; s/%/%25/g; s/\r/%0D/g' | sed ':a;N;$!ba;s/\n/%0A/g')
+          echo "::error title=next build output::${body}"
 
       # Belt and braces: the file is in /public, but a missing .nojekyll breaks
       # the whole site in a way that is not obvious from the build log.
