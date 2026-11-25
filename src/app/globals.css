@@ -103,7 +103,8 @@
   .article-figure-title {
     @apply mb-3 font-sans text-xs uppercase tracking-[0.14em] text-ink/55;
   }
-  .article-figure-note {
+  .article-figure-note,
+  .article-prose .article-figure-note {
     @apply mt-3 text-xs leading-relaxed text-ink/50;
   }
 }

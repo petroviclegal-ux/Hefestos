@@ -163,7 +163,7 @@ function Ticks({
           </text>
         </g>
       ))}
-      <text x={PLOT_X + PLOT_W} y={axisY + 26} textAnchor="end" fontSize="11" fill={MUTED}>
+      <text x={PLOT_X + PLOT_W + 14} y={axisY + 12} textAnchor="start" fontSize="11" fill={MUTED}>
         {unit}
       </text>
     </g>
